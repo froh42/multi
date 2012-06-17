@@ -1,58 +1,34 @@
 /*global module:false*/
 module.exports = function(grunt) {
 
-  // Project configuration.
-  grunt.initConfig({
-    pkg: '<json:package.json>',
-    meta: {
-      banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
-        '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
-        '<%= pkg.homepage ? "* " + pkg.homepage + "\n" : "" %>' +
-        '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
-        ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */'
-    },
-    lint: {
-      files: ['grunt.js', 'lib/**/*.js', 'test/**/*.js']
-    },
-    qunit: {
-      files: ['test/**/*.html']
-    },
-    concat: {
-      dist: {
-        src: ['<banner:meta.banner>', '<file_strip_banner:lib/<%= pkg.name %>.js>'],
-        dest: 'dist/<%= pkg.name %>.js'
-      }
-    },
-    min: {
-      dist: {
-        src: ['<banner:meta.banner>', '<config:concat.dist.dest>'],
-        dest: 'dist/<%= pkg.name %>.min.js'
-      }
-    },
-    watch: {
-      files: '<config:lint.files>',
-      tasks: 'lint qunit'
-    },
-    jshint: {
-      options: {
-        curly: true,
-        eqeqeq: true,
-        immed: true,
-        latedef: true,
-        newcap: true,
-        noarg: true,
-        sub: true,
-        undef: true,
-        boss: true,
-        eqnull: true,
-        browser: true
-      },
-      globals: {}
-    },
-    uglify: {}
-  });
+    // Project configuration.
+    grunt.initConfig({
+        meta: {
+            title: 'Multi (Test1)',
+            name: "Frohwalt Egerer",
+            homepage: 'http://et42.de',
+            banner: '/* \n' +
+                ' * \tAuthor:\t\t{{meta.name}}\n' +
+                ' * \tWebsite:\t{{meta.homepage}}\n' +
+                ' * \n' +
+                ' * \tTitle:\t\t{{meta.title}}\n' +
+                ' * \tBuild:\t\t{{today "yyyyddmm"}}\n' +
+                ' * \n' +
+                ' */'
+        },
+        watch: {
+            files: ["src/js/**/*.js"],
+            tasks: 'default'
+        },
+        concat: {
+            'src/multi.js': ["src/lib/knockout-2.1.0.js", "src/bootstrap/js/bootstrap-*.js"]
+        },
+        min: {
+            'src/multi.min.js': ['<banner>', 'src/multi.js']
+        }
+    });
 
-  // Default task.
-  grunt.registerTask('default', 'lint qunit concat min');
+    // Default task.
+    grunt.registerTask('default', 'concat min');
 
 };
