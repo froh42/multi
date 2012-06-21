@@ -2,6 +2,8 @@
 
 ## 2012-06-20 Ziel, Hello Github
 
+### Ziel
+
 In zwei Wochen, am 4.7.2012 ist der nächste [Workshop Softwarearchitektur](http://workshop-softwarearchitektur.de) bei den IT-Agenten.
 
 Unser Fokus ist Qualität und Testing, am Beispiel eine kleinen Javascript-Applikation wollen wir folgendes zeigen:
@@ -14,6 +16,10 @@ Unser Fokus ist Qualität und Testing, am Beispiel eine kleinen Javascript-Appli
 Als Showcase dient *multi*.
 
 Es gibt einen Meilenstein, das ist die zweite Telco zur Vorbereitung am nächsten Mittwoch den 27.6.2012 um 20.00h. 
+
+### Hello Github
+
+Multi ist jetzt auf Github öffentlich verfügbar. Um lange Suchen nach einer passenden Lizenz zu vermeiden, habe ich alles einfach eine möglichst großzügige MIT-Lizenz für den aktuellen Stand [verwendet](LICENSE).
 
 
 ## 2012-06-18 Planning
