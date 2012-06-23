@@ -1,5 +1,14 @@
 # Multiplication prototype blog
 
+## 2012-06-23 Testkandidaten für UI Tests markiert
+
+Im (Backlog)[plan.md] habe ich jetzt für die (eine, simple) erledigten Story die Confirmation aufgeschrieben,
+durch die die Story erfüllt ist. Beachte: In meinem Backlog gibt es keine Confirmations bei den offenen Stories, denn
+ich bin in diesem Tool ja selbst Anforderungsgeber und Entwickler in Personalunion, brauche daher als Anforderer
+keine Confirmations schreiben um den Entwickler zu sagen was zu tun ist. Im Nachhinein ist es aber interessant zu
+sehen, WARUM eine Story erfüllt ist - und im aktuellen Fall ist das auch gleich ein Kandidat für einen Test. Da
+es eine UI-Geschichte ist, ein Kandidat für Flo's Selenium Test.
+
 ## 2012-06-20 Ziel, Hello Github
 
 ### Ziel
