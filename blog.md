@@ -1,5 +1,24 @@
 # Multiplication prototype blog
 
+## 2012-06-23 Testing
+
+Für Multi habe wir letzen Mittwoch geplant, ein kompletten Durchstich für Tests zu schreiben. Mir fällt dabei auf, dass ich schon eine Story als erledigt markiert habe, aber noch keine Tests dafür geschrieben. Why? Vermutlich weil ich noch keine Definition of Done habe.
+
+Also:
+
+* Eine Definition of done muß her
+* Die existierende, abgeschlossene Story muß nochmal zurück
+
+### Definiton of Done
+
+Eine Story ist genau dann fertig, wenn:
+
+* Sie das erfüllt, was ich mir vorgestellt habe. (Im echten Leben: Sie erfüllt die vorher definierten Confirmations)
+* Es einen Test gibt, der die geforderten Dinge nachweist
+
+Wupps. Ich brauche also schnell für die erste Story einen Test (oder lasse sie wie unten erwähnt auf UI Test stehen). Egal, ich brauche in jedem Falle für die AKTUELLE Story einen Test, damit ich sie abschließen kann. Ein Testframework muß her, aber schnell! Ich mach's mir einfach und klaue einfach das, was auch knockout.js verwendet - schließlich ist das meine Hauptlibrary und vielleicht kann ich ja dann bei knockout abschreiben, wenn ich mal nicht weiter weiß wie ich einen Test erstellen soll.
+
+
 ## 2012-06-23 Testkandidaten für UI Tests markiert
 
 Im (Backlog)[plan.md] habe ich jetzt für die (eine, simple) erledigten Story die Confirmation aufgeschrieben,
