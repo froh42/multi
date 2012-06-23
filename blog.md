@@ -1,5 +1,11 @@
 # Multiplication prototype blog
 
+## 2012-06-23 Jasmine runs
+
+	froh@Jules:~/dev/multi$ grunt jasmine
+	Running "jasmine:all" (jasmine) task
+	>> 0 assertions passed in 0 specs (0ms)
+
 ## 2012-06-23 Testing
 
 Für Multi habe wir letzen Mittwoch geplant, ein kompletten Durchstich für Tests zu schreiben. Mir fällt dabei auf, dass ich schon eine Story als erledigt markiert habe, aber noch keine Tests dafür geschrieben. Why? Vermutlich weil ich noch keine Definition of Done habe.

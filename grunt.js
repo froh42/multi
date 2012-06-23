@@ -25,10 +25,14 @@ module.exports = function (grunt) {
         },
         min:{
             'lib/multi.min.js':['<banner>', 'src/multi.js']
-        }
+        },
+        jasmine: {
+            all: ['specs/runner.html']
+        },
     });
 
     // Default task.
+    grunt.loadNpmTasks('grunt-jasmine-task');
     grunt.registerTask('default', 'concat min');
 
 };
