@@ -27,7 +27,7 @@ module.exports = function (grunt) {
             'lib/multi.min.js':['<banner>', 'src/multi.js']
         },
         jasmine: {
-            all: ['specs/runner.html']
+            all: ['spec/runner.html']
         },
     });
 
