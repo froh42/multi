@@ -1,5 +1,9 @@
 # Multiplication prototype blog
 
+## 2012-06-25 Travis CI
+
+Heute habe ich zwar nichts gemacht, Joe hat sich aber (offenbar erfolgreich) angesehen, wie man alles unter Travis-CI zum Laufen bringt.
+
 ## 2012-06-23 Jasmine runs
 
 	froh@Jules:~/dev/multi$ grunt jasmine
