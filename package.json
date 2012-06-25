@@ -3,6 +3,7 @@
   "version": "0.0.0",
  
   "scripts" : { 
+    "install" : "grunt",
     "test" : "grunt jasmine" 
   },
 
