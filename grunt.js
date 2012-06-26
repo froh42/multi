@@ -29,10 +29,28 @@ module.exports = function (grunt) {
         jasmine: {
             all: ['spec/runner.html']
         },
+        lint: {
+            all: ['grunt.js', 'src/*.js', 'spec/*.js']
+        },
+        jshint: {
+            options: {
+                browser: true
+            }
+        }
     });
 
     // Default task.
     grunt.loadNpmTasks('grunt-jasmine-task');
-    grunt.registerTask('default', 'concat min');
+    grunt.registerTask('default', 'lint concat min');
 
 };
+
+
+/*
+
+More stuff to possibly include:
+
+http://coveraje.github.com/                     -- Javascript code coverage
+http://stackoverflow.com/a/5168482/60229        -- Link to client side JS package managers
+
+*/
