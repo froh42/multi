@@ -1,5 +1,21 @@
 # Multiplication prototype blog
 
+## 2012-06-25 Databinding
+
+Juhu, es gibt ein elementares UI, das erste Viewmodel wird mit Knockout angesprochen, es gibt test-specs die Zugriff auf das Viewmodel haben und es gibt unerledigte Aufgaben: Wir können anfangen, Tests zu schreiben um Funktionalität einzubauen.
+
+## 2012-06-25 Lint
+Im Grunt-Script ist jetzt lint (jshint) auch dabei. Mit
+
+    grunt server watch
+    
+läßt sich ein Webserver starten und das Build-Script im "watch" Modus betreiben, damit bei jedem Speichern kompiliert wird. Jetzt können wir anstelle der expliziten Libraries
+auch die minifizierten in der Seite verwenden.
+
+Überlegung: So etwas wie requirejs könnte Browserseitig gut tun, mit der Javascript-Art von "ich verwende mal ein paar benannte globale Variablen, die das HTML per Script-Tag vorher geladen hat" mach mir ein bisschen Magengrummeln.
+
+
+
 ## 2012-06-25 Travis CI
 
 Heute habe ich zwar nichts gemacht, Joe hat sich aber (offenbar erfolgreich) angesehen, wie man alles unter Travis-CI zum Laufen bringt.
