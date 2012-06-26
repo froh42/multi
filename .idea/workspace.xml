@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="198d37ef-3e5f-4fb9-bf2c-9e9f55f3566c" name="Default" comment="First static mockup">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grunt.js" afterPath="$PROJECT_DIR$/grunt.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game.html" afterPath="$PROJECT_DIR$/src/game.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/viewmodel.js" afterPath="$PROJECT_DIR$/src/viewmodel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/start.html" afterPath="$PROJECT_DIR$/src/start.html" />
     </list>
     <ignored path="multi.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -90,10 +89,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="grunt.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="grunt.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grunt.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="40" selection-start="1241" selection-end="1241" vertical-scroll-proportion="0.73714286">
+            <state line="38" column="5" selection-start="1120" selection-end="1120" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -135,10 +134,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="game.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="game.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/game.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="36" selection-start="1737" selection-end="1737" vertical-scroll-proportion="-29.833334">
+            <state line="20" column="40" selection-start="584" selection-end="584" vertical-scroll-proportion="0.24206816">
               <folding />
             </state>
           </provider>
@@ -147,7 +146,7 @@
       <file leaf-file-name="start.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/start.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="0" selection-start="479" selection-end="479" vertical-scroll-proportion="-8.958333">
+            <state line="19" column="40" selection-start="528" selection-end="528" vertical-scroll-proportion="-9.583333">
               <folding />
             </state>
           </provider>
@@ -173,15 +172,15 @@
         <option value="$PROJECT_DIR$/src/less/multi.less" />
         <option value="$PROJECT_DIR$/src/blog.md" />
         <option value="$PROJECT_DIR$/src/plan.md" />
-        <option value="$PROJECT_DIR$/src/start.html" />
         <option value="$PROJECT_DIR$/plan.md" />
         <option value="$PROJECT_DIR$/blog.md" />
         <option value="$PROJECT_DIR$/spec/dependentObservableBehaviors.js" />
         <option value="$PROJECT_DIR$/spec/runner.html" />
         <option value="$PROJECT_DIR$/spec/spec.js" />
         <option value="$PROJECT_DIR$/src/viewmodel.js" />
-        <option value="$PROJECT_DIR$/src/game.html" />
         <option value="$PROJECT_DIR$/grunt.js" />
+        <option value="$PROJECT_DIR$/src/start.html" />
+        <option value="$PROJECT_DIR$/src/game.html" />
       </list>
     </option>
   </component>
@@ -587,13 +586,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/start.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="479" selection-end="479" vertical-scroll-proportion="-8.958333">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/viewmodel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="42" selection-start="316" selection-end="316" vertical-scroll-proportion="0.0">
@@ -601,16 +593,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game.html">
+    <entry file="file://$PROJECT_DIR$/grunt.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="36" selection-start="1737" selection-end="1737" vertical-scroll-proportion="-29.833334">
+        <state line="38" column="5" selection-start="1120" selection-end="1120" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grunt.js">
+    <entry file="file://$PROJECT_DIR$/src/start.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="40" selection-start="1241" selection-end="1241" vertical-scroll-proportion="0.73714286">
+        <state line="19" column="40" selection-start="528" selection-end="528" vertical-scroll-proportion="-9.583333">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="40" selection-start="584" selection-end="584" vertical-scroll-proportion="0.24206816">
           <folding />
         </state>
       </provider>
