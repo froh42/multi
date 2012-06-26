@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
+<html>
 <head>
     <meta charset="utf-8">
     <title>Multiplication trainer prototype</title>
@@ -8,6 +8,8 @@
     <!-- Le styles -->
     <link href="less/multi.less" rel="stylesheet/less">
     <script src="lib/less-1.3.0.min.js"></script>
+    <script src="lib/knockout-2.1.0.debug.js"></script>
+
     <style>
         body {
             padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
@@ -39,8 +41,8 @@
 
 <div class="container">
 
-    <h1>Aufgabe <span data-bind='text: excerciseNumber'>(num)</span> von <span
-            data-bind='text: excerciseCount'>(total)</span></h1>
+    <h1>Aufgabe <span data-bind='text: exerciseNumber'>(num)</span> von <span
+            data-bind='text: exerciseCount'>(total)</span></h1>
 
     <p><span data-bind='text: factor1'>factor1</span> * <span data-bind='text: factor2'>factor2</span></p>
     <p>Enter result: <input data-bind='value: result'/></p>
@@ -50,6 +52,6 @@
     <p><a href="game.html">Next exercise</a></p>
 </div>
 
-
+<script src="viewmodel.js"></script>
 </body>
 </html>
