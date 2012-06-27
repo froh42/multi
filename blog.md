@@ -47,7 +47,7 @@ Wupps. Ich brauche also schnell für die erste Story einen Test (oder lasse sie 
 
 ## 2012-06-23 Testkandidaten für UI Tests markiert
 
-Im (Backlog)[plan.md] habe ich jetzt für die (eine, simple) erledigten Story die Confirmation aufgeschrieben,
+Im (Backlog)[backlog.md] habe ich jetzt für die (eine, simple) erledigten Story die Confirmation aufgeschrieben,
 durch die die Story erfüllt ist. Beachte: In meinem Backlog gibt es keine Confirmations bei den offenen Stories, denn
 ich bin in diesem Tool ja selbst Anforderungsgeber und Entwickler in Personalunion, brauche daher als Anforderer
 keine Confirmations schreiben um den Entwickler zu sagen was zu tun ist. Im Nachhinein ist es aber interessant zu
