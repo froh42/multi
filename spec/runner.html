@@ -5,9 +5,13 @@
     <title>Jasmine Spec Runner: Jasmine Core</title>
 
 
+    <script>
+        console.log("Hello, runner.html!");
+    </script>
     <link href="lib/jasmine-1.2.0/jasmine.css" rel="stylesheet"/>
     <script type="text/javascript" src="./lib/jasmine-1.2.0/jasmine.js"></script>
     <script type="text/javascript" src="./lib/jasmine-1.2.0/jasmine-html.js"></script>
+    <script type="text/javascript" src="./lib/jasmine.console_reporter.js"></script>
     <script type="text/javascript">
         // yes, really keep this here to keep us honest, but only for jasmine's own runner! [xw]
         undefined = "diz be undefined yo";
@@ -28,13 +32,16 @@
             var jasmineEnv = jasmine.getEnv();
             jasmineEnv.updateInterval = 1000;
 
-            var htmlReporter = new jasmine.HtmlReporter();
+            // var htmlReporter = new jasmine.HtmlReporter();
+            // jasmineEnv.addReporter(htmlReporter);
+            
+            // var consoleReporter = new jasmine.ConsoleReporter();
+            // jasmineEnv.addReporter(consoleReporter);
+            
 
-            jasmineEnv.addReporter(htmlReporter);
-
-            jasmineEnv.specFilter = function(spec) {
-                return htmlReporter.specFilter(spec);
-            };
+//            jasmineEnv.specFilter = function(spec) {
+//                return htmlReporter.specFilter(spec);
+//            };
 
             var currentWindowOnload = window.onload;
 
@@ -46,6 +53,7 @@
             };
 
             function execJasmine() {
+                console.log("****EXECUTE****")
                 jasmineEnv.execute();
             }
 

@@ -1,5 +1,7 @@
 # Javascript development prototype 
 
+[![Build Status](https://secure.travis-ci.org/froh42/multi.png?branch=master)](http://travis-ci.org/froh42/multi)
+
 This is a very simple (serverless) Javascript application to experiment with JavaScript development.
 
 * Have the complete build, testing & deployment path ready right from the start
@@ -27,6 +29,6 @@ This is a very simple (serverless) Javascript application to experiment with Jav
 
 # Further info
 
-See [Blog](blog.md) for my developments notes
+See [Blog](https://github.com/froh42/multi/blob/master/blog.md) for my developments notes
 
-See [Backlog](backlog.md) for the current backlog
+See [Backlog](https://github.com/froh42/multi/blob/master/backlog.md) for the current backlog
