@@ -1,5 +1,12 @@
 # Multiplication prototype blog
 
+## 2012-06-27 Fixing tests
+Seit gerade eben laufen die Tests auf travis-ci erfolgreich durch. Es gab mehrere Gründe, warum dem bisher nicht so war:
+
+* Der html- oder consoleReporter hat nicht funktioniert, phantom.js hatte dann einen Timeout (obwohl die Tests "Passed" waren)
+* Diverse kleine Einstellungs- und Scriptproblemchen im Umfeld der Unittests
+
+
 ## 2012-06-25 Databinding
 
 Juhu, es gibt ein elementares UI, das erste Viewmodel wird mit Knockout angesprochen, es gibt test-specs die Zugriff auf das Viewmodel haben und es gibt unerledigte Aufgaben: Wir können anfangen, Tests zu schreiben um Funktionalität einzubauen.
