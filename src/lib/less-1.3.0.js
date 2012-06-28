@@ -227,7 +227,7 @@ less.Parser = function Parser(env) {
             less.Parser.importer(path, this.paths, function (e, root, contents) {
                 that.queue.splice(that.queue.indexOf(path), 1); // Remove the path from the queue
                 that.files[path] = root;                        // Store the root
-                that.contents[path] = contents;
+                that.contents[basename(path)] = contents;
 
                 if (e && !that.error) { that.error = e }
                 callback(e, root);
