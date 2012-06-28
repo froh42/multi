@@ -20,15 +20,6 @@ module.exports = function (grunt) {
             files:["src/js/**/*.js", "grunt.js"],
             tasks:'default'
         },
-        concat:{
-            'lib/multi.js':["src/lib/knockout-2.1.0.js", "src/bootstrap/js/bootstrap-*.js"]
-        },
-        min:{
-            'lib/multi.min.js':['<banner>', 'src/multi.js']
-        },
-        jasmine: {
-            all: ['spec/runner.html']
-        },
         lint: {
             all: ['grunt.js', 'src/*.js', 'spec/*.js']
         },
@@ -40,8 +31,7 @@ module.exports = function (grunt) {
     });
 
     // Default task.
-    grunt.loadNpmTasks('grunt-jasmine-task');
-    grunt.registerTask('default', 'lint concat min');
+    grunt.registerTask('default', 'lint');
 
 };
 
