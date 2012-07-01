@@ -1,4 +1,10 @@
 #!/bin/sh
+
+#
+# This doesn't handle error codes. See trap and http://stackoverflow.com/questions/1000370/add-collect-exit-codes-in-bash
+# how to add it. (But not for today)
+#
+
 (
     echo "******"
     echo "****** jsTestDriver"
