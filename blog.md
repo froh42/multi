@@ -1,5 +1,11 @@
 # Multiplication prototype blog
 
+## 2012-07-01 Tests mit js-test-driver
+
+Nachdem die jasmine-tests nicht direkt in Idea zu testen waren habe ich noch einmal mit den Tests rumgespielt und bin jetzt bei js-test-driver gelandet. Diesen kann man über [js-test-driver-phantomjs](https://github.com/larrymyers/js-test-driver-phantomjs) auch headless auf travis-ci laufen lassen, es ist nur etwas Shellscriptpopelei.
+
+js-test-driver integriert sich - wenn man will - auch wunderbar mit einer ganzen Reihe von anderen Testframeworks und kann mit mehreren Browsern testen. (Aufgabe für den geneigten Leser: Die Tests auf travis-ci auf phantomjs UND firefox laufen lassen …)
+
 ## 2012-06-27 Fixing tests
 Seit gerade eben laufen die Tests auf travis-ci erfolgreich durch. Es gab mehrere Gründe, warum dem bisher nicht so war:
 
