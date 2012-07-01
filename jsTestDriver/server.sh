@@ -20,7 +20,7 @@ fi
 if [[ $COMMAND == "start" ]]; then
     echo "Starting JSTD Server"
 
-    nohup java -jar $ROOTDIR/JsTestDriver-$JSTD_VERSION.jar --port 9876 > $ROOTDIR/jstd.out 2> $ROOTDIR/jstd.err < /dev/null &
+    nohup java -jar $ROOTDIR/JsTestDriver-$JSTD_VERSION.jar --port 9877 > $ROOTDIR/jstd.out 2> $ROOTDIR/jstd.err < /dev/null &
     echo $! > $ROOTDIR/jstd.pid
 
     echo "Starting PhantomJS"

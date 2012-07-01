@@ -4,7 +4,7 @@
  
   "scripts" : { 
     "install" : "grunt",
-    "test" : "grunt jasmine" 
+    "test" : "./test.sh" 
   },
 
   "devDependencies" : { 

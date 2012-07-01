@@ -2,3 +2,9 @@ node_modules
 npm-debug.log
 .idea/workspace.xml
 .idea/workspace.xml
+jsTestDriver/*.err
+jsTestDriver/*.out
+jsTestDriver/*.pid
+jsTestDriver/JsTestDriver-1.3.4.b.jar
+jsTestDriver/coverage-1.3.4.b.jar
+testReports/*
