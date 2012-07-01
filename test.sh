@@ -24,7 +24,6 @@
     ./server.sh stop
     echo "***** SERVER START"
     ./server.sh start
-    sleep 10
     echo "***** RUN TEST"
     ./runtests.sh 
     echo "***** SERVER STOP"

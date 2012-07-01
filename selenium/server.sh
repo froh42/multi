@@ -17,13 +17,24 @@ if [[ $COMMAND == "start" ]]; then
 
     nohup java -jar $ROOTDIR/selenium-server-standalone-$SELENIUM_VERSION.jar > $ROOTDIR/selenium.out 2> $ROOTDIR/selenium.err < /dev/null &
     echo $! > $ROOTDIR/selenium.pid
+
+    for i in {0..30}; do
+	echo "Waiting for selenium ... $i"
+	curl -s -f http://localhost:4444/selenium-server
+	if [ $? -eq 0 ]; then
+	    break
+	fi
+	sleep 1
+    done
 fi
 
 if [[ $COMMAND == "stop" ]]; then
-    echo "Killing JSTD Server"
+    echo "Killing SELENIUM Server"
 
-    PID=`cat $ROOTDIR/selenium.pid`
-    kill $PID
+    if [ -f $ROOTDIR/selenium.pid ]; then
+	PID=`cat $ROOTDIR/selenium.pid`
+	kill $PID
+    fi
 
     rm -f $ROOTDIR/selenium.out $ROOTDIR/selenium.err $ROOTDIR/selenium.pid
 fi
