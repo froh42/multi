@@ -1,4 +1,5 @@
-// Test: Transition from start- to game screen
+// Test: Solve a multiplication exercise
+// Depends: Selenium WebdriverJS
 
 var assert = require("assert"),
     webdriver = require("./lib/webdriver");
