@@ -8,3 +8,7 @@ jsTestDriver/*.pid
 jsTestDriver/JsTestDriver-1.3.4.b.jar
 jsTestDriver/coverage-1.3.4.b.jar
 testReports/*
+selenium/selenium-server-standalone-2.24.1.jar
+selenium/*.err
+selenium/*.out
+selenium/*.pid
