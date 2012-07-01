@@ -1,0 +1,3 @@
+load:
+  - src/lib/knockout-2.1.0.js
+  - spec/tests.js
