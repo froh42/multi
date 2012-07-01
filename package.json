@@ -4,13 +4,12 @@
  
   "scripts" : { 
     "install" : "grunt",
-    "test" : "grunt jasmine" 
+    "test" : "./test.sh" 
   },
 
   "devDependencies" : { 
     "grunt" : "~0.3.9",
     "grunt-less" : "~0.1.5",
-    "grunt-jasmine-task" : "~0.2.0",
     "webdriverjs" : "~0.6.9"
   }
 }
