@@ -14,6 +14,8 @@ var client = new webdriver.Builder()
     })
     .build();
 
+client.manage().timeouts().implicitlyWait(10000);
+
 // Construct URL to local file.
 var test_url = "file://" + __dirname + "/../src/start.html";
 
