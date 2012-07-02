@@ -15,20 +15,13 @@ var client = new webdriver.Builder().
     build();
 
 
+
+client.manage().timeouts().implicitlyWait(10000);
 // Construct URL to local file.
 var test_url = "file://" + __dirname + "/../src/start.html";
 client.get(test_url);
 
-describe('Run selenium tests', function() {
-
-    before (function(done) {
-	
-
-describe('The start page', function() {
-    it('should have a `Start game` link', function() {
-	client.findElement(webdriver.By.linkText("Start game")).click();
-    });
-});
+client.findElement(webdriver.By.linkText("Start game")).click();
 
 var temp = client.findElement(webdriver.By.linkText("Next exercise"));
 assert(temp);

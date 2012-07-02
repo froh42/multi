@@ -32,15 +32,19 @@ fi
 if [[ $COMMAND == "stop" ]]; then
     echo "Killing JSTD Server"
 
-    PID=`cat $ROOTDIR/jstd.pid`
-    kill $PID
+    if [ -f $ROOTDIR/jstd.pid ]; then
+	PID=`cat $ROOTDIR/jstd.pid`
+	kill $PID
+    fi
 
     rm -f $ROOTDIR/jstd.out $ROOTDIR/jstd.err $ROOTDIR/jstd.pid
 
     echo "Killing PhantomJS"
 
-    PID=`cat $ROOTDIR/phantomjs.pid`
-    kill $PID
+    if [ -f $ROOTDIR/phantomjs.pid ]; then
+	PID=`cat $ROOTDIR/phantomjs.pid`
+	kill $PID
+    fi
 
     rm -f $ROOTDIR/phantomjs.out $ROOTDIR/phantomjs.err $ROOTDIR/phantomjs.pid
 fi
