@@ -14,6 +14,8 @@ var client = new webdriver.Builder()
     })
     .build();
 
+// Prevent not failing tests due to not being ready
+// http://seleniumhq.org/docs/04_webdriver_advanced.html#implicit-waits
 client.manage().timeouts().implicitlyWait(10000);
 
 // Construct URL to local file.
