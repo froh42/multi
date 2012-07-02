@@ -1,2 +1,5 @@
 load:
-  - spec/*Test.js
+  - src/lib/knockout-2.1.0.debug.js
+  - src/viewmodel.js
+  - spec/viewmodelTest.js
+
