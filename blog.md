@@ -1,5 +1,10 @@
 # Multiplication prototype blog
 
+## 2012-07-02 Timeout, hurra!
+
+Ja, es war der Timeout warum im Selenium-Test das zweite findelement nicht geklappt hat.
+Timeout auf 10s gesetzt, jetzt läuft der Test auch auch travis-ci durch.
+
 ## 2012-07-02 Selenium auf travis-ci
 
 Ich habe gerade für Florian's selenium-test die scripts angepasst, die ich bei js-test-driver-phantomjs gefunden hatte und für travis den X-Server konfiguriert. Jetzt kann man die Selenium-Tests auch auf travis-ci starten, ***allerdings*** bricht der eine Test, da er einen Link auf der game-seite nicht finden kann. Fehlt da ein wait for page? Oder ein entsprechender Timeout? Im Büro gab es neulich ähnliche Probleme mit Selenium-Tests auf unserer langsamsten Maschine, ich frage dort noch mal nach der Lösung.
