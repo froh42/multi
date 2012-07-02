@@ -9,6 +9,8 @@
     <link href="multi.less" rel="stylesheet/less">
     <script src="lib/less-1.3.0.js"></script>
     <script src="lib/knockout-2.1.0.debug.js"></script>
+    <script src="viewmodel.js"></script>
+
 
     <style>
         body {
@@ -49,13 +51,18 @@
             data-bind='text: exerciseCount'>(total)</span></h1>
 
     <p><span data-bind='text: factor1'>factor1</span> * <span data-bind='text: factor2'>factor2</span></p>
+
     <p>Enter result: <input data-bind='value: result'/></p>
+
+    <p>Result: <span data-bind='text: result'/></span></p>
 
     <p>The result is <span data-bind='text: resultIsCorrect'>(result)</span></p>
 
     <p><a href="game.html">Next exercise</a></p>
 </div>
 
-<script src="viewmodel.js"></script>
+<script>
+    ko.applyBindings(new GameViewModel());
+</script>
 </body>
 </html>
