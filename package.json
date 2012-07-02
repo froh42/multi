@@ -1,6 +1,10 @@
 {
   "name": "multi",
   "version": "0.0.0",
+
+  "config" : {
+    "loglevel" : "error"
+  },
  
   "scripts" : { 
     "install" : "grunt",
