@@ -1,5 +1,29 @@
 # Multiplication prototype blog
 
+## 2012-07-02 Abgrenzung Selenium/Unit tests
+
+Hier nochmal explizit, weil ich gerde selbst nicht dran gedacht habe:
+
+* Die Unit Tests testen das ViewModel ***OHNE*** HTML-Seite
+* Die Selenium-Tests testen ***die HTML-Seite***
+
+Also brauchen die Selenium Tests nichts duplizieren, was Logik um ViewModel ist. Sie überprüen allerdings, ob das ViewModel korrekt in HTML mit Databinding dargestellt wird.
+
+
+## 2012-07-02 Rückenwind!
+
+Nach einem kleinen Miniproblem (ich darf im viewmodel.js das Model noch nicht ans HTML binden, sonst kracht's im HTML-losen Unit test) habe ich jetzt Testdriven die game-Seite weiterentwickelt.
+
+* Es gibt erste Rechenaufgaben
+* Die Zählung der Aufgabe beginnt bei 1
+* Ein Test überprüft, dass es auch wirklich 10 Aufgaben sind
+* Ein Test überprüft, ob das Ergebnis korrekt verglichen wird
+
+Ein problem waren ein String-gegen-Zahlenvergleich in JS, ein parseInt hat hier für Abhilfe gesorgt. Und, oh Wunder sogleich hat travis-cs mittels jshint sein erstes ***echtes Problem*** in meinem Source gefunden. (parseInt will einen Radix).
+
+Travis-ci sagt mir gerade, es ist alles grün.
+
+
 ## 2012-07-02 Timeout, hurra!
 
 Ja, es war der Timeout warum im Selenium-Test das zweite findelement nicht geklappt hat.
@@ -69,12 +93,8 @@ Wupps. Ich brauche also schnell für die erste Story einen Test (oder lasse sie 
 
 ## 2012-06-23 Testkandidaten für UI Tests markiert
 
-Im (Backlog)[backlog.md] habe ich jetzt für die (eine, simple) erledigten Story die Confirmation aufgeschrieben,
-durch die die Story erfüllt ist. Beachte: In meinem Backlog gibt es keine Confirmations bei den offenen Stories, denn
-ich bin in diesem Tool ja selbst Anforderungsgeber und Entwickler in Personalunion, brauche daher als Anforderer
-keine Confirmations schreiben um den Entwickler zu sagen was zu tun ist. Im Nachhinein ist es aber interessant zu
-sehen, WARUM eine Story erfüllt ist - und im aktuellen Fall ist das auch gleich ein Kandidat für einen Test. Da
-es eine UI-Geschichte ist, ein Kandidat für Flo's Selenium Test.
+Im (Backlog)[backlog.md] habe ich jetzt für die (eine, simple) erledigten Story die Confirmation aufgeschrieben, durch die die Story erfüllt ist. Beachte: In meinem Backlog gibt es keine Confirmations bei den offenen Stories, denn ich bin in diesem Tool ja selbst Anforderungsgeber und Entwickler in Personalunion, brauche daher als Anforderer
+keine Confirmations schreiben um den Entwickler zu sagen was zu tun ist. Im Nachhinein ist es aber interessant zu sehen, WARUM eine Story erfüllt ist - und im aktuellen Fall ist das auch gleich ein Kandidat für einen Test. Da es eine UI-Geschichte ist, ein Kandidat für Flo's Selenium Test.
 
 ## 2012-06-20 Ziel, Hello Github
 
