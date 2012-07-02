@@ -38,14 +38,19 @@ describe("Run Selenium tests", function() {
 
     describe('The start page', function() {
         it('should have a `Start game` link', function() {
-            assert.ok(client.findElement(webdriver.By.linkText("Start game")));
+            assert(client.findElement(webdriver.By.linkText("Start game")).isDisplayed());
         });
     });
 
     describe('The `Start game` link', function() {
         it('should lead us to the game page', function(done) {
-            client.findElement(webdriver.By.linkText("Start game")).click();
-            assert.ok(client.findElement(webdriver.By.linkText("Next exercise")).then(function(){done();}));
+            client
+		.findElement(webdriver.By.linkText("Start game"))
+		.click()
+		.then(function(){
+		    assert.ok(
+			client.findElement(webdriver.By.linkText("Next exercise")).then(function(){done();}));
+		});
         });
     });
 
@@ -87,7 +92,7 @@ describe("Run Selenium tests", function() {
                 });
         });
 
-        it('should be kept open for a couple more seconds', function(done) {
+        xit('should be kept open for a couple more seconds', function(done) {
             // For the world to see!
             client.sleep(5000).then(function(){done();});
         });
