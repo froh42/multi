@@ -14,6 +14,6 @@ function GameViewModel() {
     this.factor2 = ko.observable(getRandomInt(1,10));
     this.result = ko.observable("");
     this.resultIsCorrect = ko.computed(function() {
-        return parseInt(this.result()) == parseInt(this.factor1()) * parseInt(this.factor2());
+        return parseInt(this.result(), 10) == parseInt(this.factor1(), 10) * parseInt(this.factor2(), 10);
     }, this);
 }
