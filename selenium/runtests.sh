@@ -4,5 +4,5 @@ ROOTDIR="$( cd "$( dirname "$0")" && pwd )"
 
 (
     cd $ROOTDIR
-    for i in `ls -1 test_*.js`; do node $i; done
+    mocha -t 30000 --reporter spec testsuite.js
 )
