@@ -863,13 +863,13 @@ goog.string.getRandomString = function() {
 };
 goog.string.compareVersions = function(a, b) {
   for(var c = 0, d = goog.string.trim("" + a).split("."), e = goog.string.trim("" + b).split("."), f = Math.max(d.length, e.length), g = 0;0 == c && g < f;g++) {
-    var h = d[g] || "", i = e[g] || "", j = RegExp("(\\d*)(\\D*)", "g"), l = RegExp("(\\d*)(\\D*)", "g");
+    var h = d[g] || "", i = e[g] || "", j = RegExp("(\\d*)(\\D*)", "g"), k = RegExp("(\\d*)(\\D*)", "g");
     do {
-      var k = j.exec(h) || ["", "", ""], m = l.exec(i) || ["", "", ""];
-      if(0 == k[0].length && 0 == m[0].length) {
+      var l = j.exec(h) || ["", "", ""], m = k.exec(i) || ["", "", ""];
+      if(0 == l[0].length && 0 == m[0].length) {
         break
       }
-      var c = 0 == k[1].length ? 0 : parseInt(k[1], 10), n = 0 == m[1].length ? 0 : parseInt(m[1], 10), c = goog.string.compareElements_(c, n) || goog.string.compareElements_(0 == k[2].length, 0 == m[2].length) || goog.string.compareElements_(k[2], m[2])
+      var c = 0 == l[1].length ? 0 : parseInt(l[1], 10), n = 0 == m[1].length ? 0 : parseInt(m[1], 10), c = goog.string.compareElements_(c, n) || goog.string.compareElements_(0 == l[2].length, 0 == m[2].length) || goog.string.compareElements_(l[2], m[2])
     }while(0 == c)
   }
   return c
@@ -1808,6 +1808,76 @@ webdriver.EventEmitter.prototype.removeAllListeners = function(a) {
   goog.isDef(a) ? delete this.events_[a] : this.events_ = {};
   return this
 };
+webdriver.stacktrace = {};
+webdriver.stacktrace.Snapshot = function(a) {
+  this.slice_ = a || 0;
+  this.stack_ = Error().stack
+};
+webdriver.stacktrace.Snapshot.prototype.parsedStack_ = null;
+webdriver.stacktrace.Snapshot.prototype.getStacktrace = function() {
+  if(goog.isNull(this.parsedStack_)) {
+    var a = this.stack_ ? webdriver.stacktrace.parse_(this.stack_) : [];
+    this.slice_ && (a = goog.array.slice(a, this.slice_));
+    this.parsedStack_ = a.join("\n");
+    delete this.stack_;
+    delete this.slice_
+  }
+  return this.parsedStack_
+};
+webdriver.stacktrace.Frame = function(a, b, c, d, e) {
+  this.context_ = a;
+  this.name_ = b;
+  this.alias_ = c;
+  this.args_ = d;
+  this.path_ = e
+};
+webdriver.stacktrace.Frame.prototype.getName = function() {
+  return this.name_
+};
+webdriver.stacktrace.Frame.prototype.isAnonymous = function() {
+  return!this.name_ || "[object Object]" == this.context_
+};
+webdriver.stacktrace.Frame.prototype.toString = function() {
+  return[this.context_ ? this.context_ + "." : "", this.name_ || "anonymous", "()", this.alias_ ? " [as " + this.alias_ + "]" : "", this.path_ ? " at " + this.path_ : ""].join("")
+};
+webdriver.stacktrace.MAX_DEPTH_ = 20;
+webdriver.stacktrace.MAX_FIREFOX_FRAMESTRING_LENGTH_ = 5E5;
+webdriver.stacktrace.IDENTIFIER_PATTERN_ = "[a-zA-Z_$][\\w$]*";
+webdriver.stacktrace.V8_ALIAS_PATTERN_ = "(?: \\[as (" + webdriver.stacktrace.IDENTIFIER_PATTERN_ + ")\\])?";
+webdriver.stacktrace.V8_FUNCTION_NAME_PATTERN_ = "(?:new )?(?:" + webdriver.stacktrace.IDENTIFIER_PATTERN_ + "|<anonymous>)";
+webdriver.stacktrace.V8_FUNCTION_CALL_PATTERN_ = " (?:(.*?)\\.)?(" + webdriver.stacktrace.V8_FUNCTION_NAME_PATTERN_ + ")" + webdriver.stacktrace.V8_ALIAS_PATTERN_;
+webdriver.stacktrace.URL_PATTERN_ = "((?:http|https|file)://[^\\s)]+|javascript:.*)";
+webdriver.stacktrace.V8_URL_PATTERN_ = " (?:\\(unknown source\\)|\\(native\\)|\\((?:eval at )?" + webdriver.stacktrace.URL_PATTERN_ + "\\)|\\((?:eval at <anonymous> \\(unknown source\\))?\\)|\\(?(.*:\\d+:\\d+)\\)?|" + webdriver.stacktrace.URL_PATTERN_ + ")";
+webdriver.stacktrace.V8_STACK_FRAME_REGEXP_ = RegExp("^    at(?:" + webdriver.stacktrace.V8_FUNCTION_CALL_PATTERN_ + ")?" + webdriver.stacktrace.V8_URL_PATTERN_ + "$");
+webdriver.stacktrace.FIREFOX_FUNCTION_CALL_PATTERN_ = "(" + webdriver.stacktrace.IDENTIFIER_PATTERN_ + ")?(\\(.*\\))?@";
+webdriver.stacktrace.FIREFOX_STACK_FRAME_REGEXP_ = RegExp("^" + webdriver.stacktrace.FIREFOX_FUNCTION_CALL_PATTERN_ + "(?::0|" + webdriver.stacktrace.URL_PATTERN_ + ")$");
+webdriver.stacktrace.OPERA_ANONYMOUS_FUNCTION_NAME_PATTERN_ = "<anonymous function(?:\\: (?:(" + webdriver.stacktrace.IDENTIFIER_PATTERN_ + "(?:\\." + webdriver.stacktrace.IDENTIFIER_PATTERN_ + ")*)\\.)?(" + webdriver.stacktrace.IDENTIFIER_PATTERN_ + "))?>";
+webdriver.stacktrace.OPERA_FUNCTION_CALL_PATTERN_ = "(?:(?:(" + webdriver.stacktrace.IDENTIFIER_PATTERN_ + ")|" + webdriver.stacktrace.OPERA_ANONYMOUS_FUNCTION_NAME_PATTERN_ + ")(\\(.*\\)))?@";
+webdriver.stacktrace.OPERA_STACK_FRAME_REGEXP_ = RegExp("^" + webdriver.stacktrace.OPERA_FUNCTION_CALL_PATTERN_ + webdriver.stacktrace.URL_PATTERN_ + "?$");
+webdriver.stacktrace.parseStackFrame_ = function(a) {
+  var b = a.match(webdriver.stacktrace.V8_STACK_FRAME_REGEXP_);
+  return b ? new webdriver.stacktrace.Frame(b[1] || "", b[2] || "", b[3] || "", "", b[4] || b[5] || "") : a.length > webdriver.stacktrace.MAX_FIREFOX_FRAMESTRING_LENGTH_ ? webdriver.stacktrace.parseLongFirefoxFrame_(a) : (b = a.match(webdriver.stacktrace.FIREFOX_STACK_FRAME_REGEXP_)) ? new webdriver.stacktrace.Frame("", b[1] || "", "", b[2] || "", b[3] || "") : (b = a.match(webdriver.stacktrace.OPERA_STACK_FRAME_REGEXP_)) ? new webdriver.stacktrace.Frame(b[2] || "", b[1] || b[3] || "", "", b[4] || 
+  "", b[5] || "") : null
+};
+webdriver.stacktrace.parseLongFirefoxFrame_ = function(a) {
+  var b = a.indexOf("("), c = a.lastIndexOf("@"), d = a.lastIndexOf(":"), e = "";
+  0 <= b && b < c && (e = a.substring(0, b));
+  var f = "";
+  0 <= c && c + 1 < d && (f = a.substring(c + 1));
+  d = "";
+  0 <= b && 0 < c && b < c && (d = a.substring(b, c));
+  return new webdriver.stacktrace.Frame("", e, "", d, f)
+};
+webdriver.stacktrace.parse_ = function(a) {
+  for(var a = a.replace(/^Error\n/, "").replace(/\s*$/, "").split("\n"), b = [], c = 0;c < a.length;c++) {
+    var d = webdriver.stacktrace.parseStackFrame_(a[c]);
+    b.push(d || "(unknown)")
+  }
+  return b
+};
+webdriver.stacktrace.get = function(a) {
+  return(new webdriver.stacktrace.Snapshot(a)).getStacktrace()
+};
 /*
  Portions of this code are from the Dojo toolkit, received under the
  BSD License:
@@ -1869,7 +1939,7 @@ webdriver.promise.Deferred = function(a) {
       throw Error("This Deferred has already been resolved.");
     }
     j = a;
-    for(l = c;h.length;) {
+    for(k = c;h.length;) {
       d(h.shift())
     }
     if(!i && j == webdriver.promise.Deferred.State.REJECTED) {
@@ -1877,13 +1947,13 @@ webdriver.promise.Deferred = function(a) {
       e.pendingRejections_ += 1;
       setTimeout(function() {
         e.pendingRejections_ -= 1;
-        i || e.abortFrame_(l)
+        i || e.abortFrame_(k)
       }, 0)
     }
   }
   function d(a) {
     var b = j == webdriver.promise.Deferred.State.RESOLVED ? a.callback : a.errback;
-    b ? (b = webdriver.promise.Application.getInstance().runInNewFrame_(goog.partial(b, l)), webdriver.promise.asap(b, a.deferred.resolve, a.deferred.reject)) : j == webdriver.promise.Deferred.State.REJECTED ? a.deferred.reject(l) : a.deferred.resolve(l)
+    b ? (b = webdriver.promise.Application.getInstance().runInNewFrame_(goog.partial(b, k)), webdriver.promise.asap(b, a.deferred.resolve, a.deferred.reject)) : j == webdriver.promise.Deferred.State.REJECTED ? a.deferred.reject(k) : a.deferred.resolve(k)
   }
   function e(a) {
     webdriver.promise.isPromise(a) && a !== m ? a instanceof webdriver.promise.Deferred ? a.then(goog.partial(c, webdriver.promise.Deferred.State.RESOLVED), goog.partial(c, webdriver.promise.Deferred.State.REJECTED)) : webdriver.promise.when(a, e, f) : c(webdriver.promise.Deferred.State.RESOLVED, a)
@@ -1899,11 +1969,11 @@ webdriver.promise.Deferred = function(a) {
     b() && f(c)
   }
   webdriver.promise.Promise.call(this);
-  var h = [], i = !1, j = webdriver.promise.Deferred.State.PENDING, l, k = new webdriver.promise.Promise, m = this;
-  this.promise = k;
+  var h = [], i = !1, j = webdriver.promise.Deferred.State.PENDING, k, l = new webdriver.promise.Promise, m = this;
+  this.promise = l;
   this.promise.then = this.then = function(a, b) {
     if(!a && !b) {
-      return k
+      return l
     }
     i = !0;
     var c = {callback:a, errback:b, deferred:new webdriver.promise.Deferred(g)};
@@ -2001,8 +2071,8 @@ webdriver.promise.fullyResolveKeys_ = function(a, b, c) {
       ++d == b && !f && g.resolve(a)
     }
     if(!f) {
-      var l = goog.typeOf(c);
-      if("array" != l && "object" != l) {
+      var k = goog.typeOf(c);
+      if("array" != k && "object" != k) {
         return j()
       }
       webdriver.promise.fullyResolved(c).then(function(b) {
@@ -2028,7 +2098,7 @@ webdriver.promise.Application.prototype.schedulingFrame_ = null;
 webdriver.promise.Application.prototype.shutdownId_ = null;
 webdriver.promise.Application.prototype.eventLoopId_ = null;
 webdriver.promise.Application.prototype.pendingRejections_ = 0;
-webdriver.promise.Application.prototype.pendingTasks_ = 0;
+webdriver.promise.Application.prototype.numAbortedFrames_ = 0;
 webdriver.promise.Application.prototype.reset = function() {
   this.activeFrame_ = null;
   this.clearHistory();
@@ -2037,10 +2107,29 @@ webdriver.promise.Application.prototype.reset = function() {
   this.cancelEventLoop_()
 };
 webdriver.promise.Application.prototype.getHistory = function() {
-  return this.history_.join("\n")
+  for(var a = [], b = this.activeFrame_;b;) {
+    var c = b.getPendingTask();
+    c && a.push(c);
+    b = b.getParent()
+  }
+  a = goog.array.concat(this.history_, a);
+  return goog.array.map(a, function(a) {
+    return a.toString()
+  })
 };
 webdriver.promise.Application.prototype.clearHistory = function() {
   this.history_ = []
+};
+webdriver.promise.Application.prototype.trimHistory_ = function() {
+  this.numAbortedFrames_ && (goog.array.splice(this.history_, this.history_.length - this.numAbortedFrames_, this.numAbortedFrames_), this.numAbortedFrames_ = 0);
+  this.history_.pop()
+};
+webdriver.promise.Application.prototype.annotateError = function(a) {
+  var b = ["\n+------------------------- Recent Task(s) -------------------------\n| ", goog.array.map(this.getHistory(), function(a) {
+    return a.split("\n").join("\n| ")
+  }).join("\n| ----- scheduled in -----\n| "), "\n+-------------------------------------------------------------------"].join("");
+  a && goog.isString(a.message) ? a.message += b : a += b;
+  return a
 };
 webdriver.promise.Application.prototype.getSchedule = function() {
   return this.activeFrame_ ? this.activeFrame_.getRoot().toString() : "[]"
@@ -2048,7 +2137,7 @@ webdriver.promise.Application.prototype.getSchedule = function() {
 webdriver.promise.Application.prototype.schedule = function(a, b) {
   this.cancelShutdown_();
   this.activeFrame_ || (this.activeFrame_ = new webdriver.promise.Application.Frame);
-  var c = new webdriver.promise.Application.Task(b, a);
+  var c = new webdriver.promise.Application.Task(b, a, new webdriver.stacktrace.Snapshot(3));
   (this.schedulingFrame_ || this.activeFrame_).addChild(c);
   this.emit(webdriver.promise.Application.EventType.SCHEDULE_TASK);
   this.scheduleEventLoopStart_();
@@ -2062,32 +2151,17 @@ webdriver.promise.Application.prototype.scheduleTimeout = function(a, b) {
 webdriver.promise.Application.prototype.scheduleWait = function(a, b, c, d) {
   var e = Math.min(c, 100), f = this;
   return this.schedule(a, function() {
-    var a, h, i;
-    function j() {
-      var a = f.runInNewFrame_(b);
-      return webdriver.promise.when(a, function(a) {
-        l();
-        var b = goog.now() - m;
-        a ? (o.isWaiting = !1, n.resolve(a)) : b >= c ? n.reject(Error((d ? d + "\n" : "") + "Wait timed out after " + b + "ms")) : setTimeout(j, e)
-      }, function(a) {
-        l();
-        n.reject(a)
-      })
+    function a() {
+      var k = f.runInNewFrame_(b);
+      return webdriver.promise.when(k, function(b) {
+        var f = goog.now() - h;
+        b ? (j.isWaiting = !1, i.resolve(b)) : f >= c ? i.reject(Error((d ? d + "\n" : "") + "Wait timed out after " + f + "ms")) : setTimeout(a, e)
+      }, i.reject)
     }
-    function l() {
-      if(f.history_.length != a) {
-        var b = goog.array.splice(f.history_, a, f.history_.length - a), c = b.join("\n");
-        !h || c != i ? (f.history_.push(k + "..[[[wait loop; 1 iteration]]]"), f.history_.push(".." + b.join("\n..")), a += 2, i = c, h = 1) : (h++, goog.array.splice(f.history_, a - 2, 1, k + "..[[[wait loop; " + h + " iterations]]]"))
-      }
-    }
-    var k = goog.array.peek(f.history_).match(/^(\.\.)+/), k = k ? k[0] : "";
-    a = f.history_.length;
-    i = "";
-    h = 0;
-    var m = goog.now(), n = new webdriver.promise.Deferred, o = f.activeFrame_;
-    o.isWaiting = !0;
-    j();
-    return n.promise
+    var h = goog.now(), i = new webdriver.promise.Deferred, j = f.activeFrame_;
+    j.isWaiting = !0;
+    a();
+    return i.promise
   })
 };
 webdriver.promise.Application.prototype.scheduleEventLoopStart_ = function() {
@@ -2101,14 +2175,13 @@ webdriver.promise.Application.prototype.runEventLoop_ = function() {
     if(this.activeFrame_) {
       var a;
       if(!this.activeFrame_.getPendingTask() && (a = this.getNextTask_())) {
-        this.history_.push(Array(this.pendingTasks_ + 1).join("..") + a.description);
         var b = this.activeFrame_;
         b.setPendingTask(a);
         var c = goog.bind(function() {
-          this.pendingTasks_--;
+          this.history_.push(a);
           b.setPendingTask(null)
         }, this);
-        this.pendingTasks_++;
+        this.trimHistory_();
         var d = this.runInNewFrame_(a.execute, !0);
         webdriver.promise.asap(d, function(b) {
           c();
@@ -2137,10 +2210,12 @@ webdriver.promise.Application.prototype.getNextTask_ = function() {
 webdriver.promise.Application.prototype.resolveFrame_ = function(a) {
   this.activeFrame_ === a && (this.activeFrame_ = a.getParent());
   a.getParent() && a.getParent().removeChild(a);
+  this.trimHistory_();
   a.resolve();
   this.activeFrame_ || this.commenceShutdown_()
 };
 webdriver.promise.Application.prototype.abortFrame_ = function(a) {
+  this.numAbortedFrames_++;
   if(this.activeFrame_) {
     var b = this.activeFrame_.getParent();
     b && b.removeChild(this.activeFrame_);
@@ -2266,14 +2341,18 @@ webdriver.promise.Application.Frame.prototype.toString = function() {
     return a.toString()
   }).join(",") + "]"
 };
-webdriver.promise.Application.Task = function(a, b) {
+webdriver.promise.Application.Task = function(a, b, c) {
   webdriver.promise.Application.Node.call(this);
   this.execute = a;
-  this.description = b || "(anonymous task)"
+  this.description_ = b;
+  this.snapshot_ = c
 };
 goog.inherits(webdriver.promise.Application.Task, webdriver.promise.Application.Node);
+webdriver.promise.Application.Task.prototype.getDescription = function() {
+  return this.description_
+};
 webdriver.promise.Application.Task.prototype.toString = function() {
-  return this.description
+  return this.description_ + "\n  > " + this.snapshot_.getStacktrace().split("\n").join("\n  > ")
 };
 webdriver.WebDriver = function(a, b) {
   this.session_ = a;
@@ -4118,7 +4197,7 @@ webdriver.node.HttpClient.prototype.send = function(a, b) {
   var c;
   a.headers["Content-Length"] = 0;
   if("POST" == a.method || "PUT" == a.method) {
-    c = JSON.stringify(a.data), a.headers["Content-Length"] = c.length
+    c = JSON.stringify(a.data), a.headers["Content-Length"] = c.length, a.headers["Content-Type"] = "application/json;charset=UTF-8"
   }
   webdriver.node.HttpClient.sendRequest_({method:a.method, host:this.options_.host, port:this.options_.port, path:this.options_.path + a.path, headers:a.headers}, b, c)
 };
