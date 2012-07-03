@@ -7,7 +7,7 @@ var assert = require("assert"),
 var client = new webdriver.Builder()
 //    usingServer('http://localhost:4444/wd/hub').
     .withCapabilities({
-      'browserName': 'opera',
+      'browserName': 'firefox',
       'version': '',
       'platform': 'ANY',
       'javascriptEnabled': true
