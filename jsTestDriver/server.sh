@@ -9,7 +9,16 @@ COMMAND=$1
 
 command -v phantomjs >/dev/null 2>&1 || { echo "Can't find phantomjs, please make sure it's on your PATH." >&2; exit 1; }
 
-source functions.sh
+source $ROOTDIR/../functions.sh
+
+checkJsTestDriver() {
+    curl -s -f http://localhost:9876 | grep JsTestDriver >/dev/null
+}
+
+checkPhantom() {
+    curl -s -f http://localhost:9876 | grep "Name: Safari" >/dev/null
+}
+
 
 mkdir -p $TMP
 download http://js-test-driver.googlecode.com/files/JsTestDriver-$JSTD_VERSION.jar  $TMP/JsTestDriver-$JSTD_VERSION.jar
