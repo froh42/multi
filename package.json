@@ -10,6 +10,7 @@
   "devDependencies" : { 
     "grunt" : "~0.3.9",
     "grunt-less" : "~0.1.5",
-    "mocha" : "1.2.x"
+    "mocha" : "1.2.x",
+    "selenium-webdriverjs" : "0.0.x"
   }
 }

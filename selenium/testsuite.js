@@ -2,7 +2,7 @@
 // Depends: Selenium webdriver.js and mocha test runner
 
 var assert = require("assert"),
-    webdriver = require("./lib/webdriver");
+    webdriver = require("selenium-webdriverjs");
 
 var client = new webdriver.Builder()
 //    usingServer('http://localhost:4444/wd/hub').
