@@ -7,7 +7,7 @@ var assert = require("assert"),
 var client = new webdriver.Builder()
 //    usingServer('http://localhost:4444/wd/hub').
     .withCapabilities({
-      'browserName': 'firefox',
+      'browserName': 'opera',
       'version': '',
       'platform': 'ANY',
       'javascriptEnabled': true
@@ -21,6 +21,71 @@ client.manage().timeouts().implicitlyWait(10000);
 // Construct URL to local file.
 var test_url = "file://" + __dirname + "/../src/start.html";
 
+
+
+describe("Run Selenium tests", function() {
+
+    before(function(done) {
+        client
+            .get(test_url);
+
+        client
+            .findElement(webdriver.By.tagName("body"))
+            .then(function(){done()});
+    });
+
+    after(function(done) {
+        client
+            .quit()
+            .then(function(){done();});
+    });
+
+    describe('The start page', function() {
+        it('should have a `Start game` link', function() {
+            assert(client.findElement(webdriver.By.linkText("Start game")).isDisplayed());
+        });
+    });
+
+    describe('The `Start game` link', function() {
+        it('should lead us to the game page', function(done) {
+            client
+		.findElement(webdriver.By.linkText("Start game"))
+		.click()
+		.then(function(){
+		    assert.ok(
+			client.findElement(webdriver.By.xpath("//input[@data-bind='value: result']"))
+			      .then(function(){done();}));
+		});
+        });
+    });
+
+    describe('The game page', function() {
+        it('should have a nice multiplication exercise for us to solve', function(done) {
+	    solveOneMulti(done);
+        });
+
+	it('should show a `Next exercise` link when correct', function(done) {
+	    client
+		.findElement(webdriver.By.linkText("Next exercise"))
+		.click()
+		.then(function(){done();})
+	});
+
+        it('should have another multiplication exercise for us', function(done) {
+	    solveOneMulti(done);
+        });
+
+        it('should be kept open for a couple more seconds', function(done) {
+            // For the world to see!
+            client.sleep(5000).then(function(){done();});
+        });
+    });
+});
+
+
+
+
+/* Test method library begins here */
 
 // Solve a mult exercise
 var solveOneMulti = function(done){
@@ -61,64 +126,3 @@ var solveOneMulti = function(done){
 	.click()
 	.then(function(){done();});
 }
-
-
-
-describe("Run Selenium tests", function() {
-
-    before(function(done) {
-        client
-            .get(test_url);
-
-        client
-            .findElement(webdriver.By.tagName("body"))
-            .then(function(){done()});
-    });
-
-    after(function(done) {
-        client
-            .quit()
-            .then(function(){done();});
-    });
-
-    describe('The start page', function() {
-        it('should have a `Start game` link', function() {
-            assert(client.findElement(webdriver.By.linkText("Start game")).isDisplayed());
-        });
-    });
-
-    describe('The `Start game` link', function() {
-        it('should lead us to the game page', function(done) {
-            client
-		.findElement(webdriver.By.linkText("Start game"))
-		.click()
-		.then(function(){
-		    assert.ok(
-			client.findElement(webdriver.By.xpath("//input[@data-bind='value: result']")).then(function(){done();}));
-		});
-        });
-    });
-
-    describe('The game page', function() {
-        it('should have a nice multiplication exercise for us to solve', function(done) {
-	    solveOneMulti(done);
-        });
-
-	it('should show a `Next exercise` when correct', function(done) {
-	    client
-		.findElement(webdriver.By.linkText("Next exercise"))
-		.click()
-		.then(function(){done();})
-	});
-
-        it('should have another multiplication exercise', function(done) {
-	    solveOneMulti(done);
-        });
-
-        it('should be kept open for a couple more seconds', function(done) {
-            // For the world to see!
-            client.sleep(5000).then(function(){done();});
-        });
-    });
-});
-
