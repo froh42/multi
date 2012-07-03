@@ -1,0 +1,32 @@
+Javascript end to end testing
+=============================
+:author: Frohwalt Egerer
+:email: <fe@et42.de>
+:description: 
+:revdate: 2012-06-03
+:revnumber: 0.1
+:deckjs_theme: neon
+:deckjs_transition: horizontal-slide
+:pygments:
+:pygments_style: native
+//:scrollable:
+//:linkcss:
+
+== Motivation
+
+We want to:
+
+.Optional Title
+[source,perl]
+----
+# *Source* block
+# Use: highlight code listings
+# (require `source-highlight` or `pygmentize`)
+use DBI;
+my $dbh = DBI->connect('...',$u,$p)
+    or die "connect: $dbh->errstr";
+----
+
+== Slide Two
+
+That's all.
