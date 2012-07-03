@@ -22,6 +22,47 @@ client.manage().timeouts().implicitlyWait(10000);
 var test_url = "file://" + __dirname + "/../src/start.html";
 
 
+// Solve a mult exercise
+var solveOneMulti = function(done){
+    // Uuaagh: We cannot hold state well in this async-o-rama,
+    // so I copy the factors into the result field, eval() (!!)
+    // its content and send the result back to the field.
+
+    var field = client.findElement(webdriver.By.xpath("//input[@data-bind='value: result']"));
+    field.clear();
+    
+    client
+        .findElement(webdriver.By.xpath("//span[@data-bind='text: factor1']"))
+        .getText()
+        .then(function(text) {
+            field.sendKeys(text + " * ");
+            //console.log(text);
+        });
+    
+    client
+        .findElement(webdriver.By.xpath("//span[@data-bind='text: factor2']"))
+        .getText()
+        .then(function(text) {
+            field.sendKeys(text);
+            //console.log(text);
+        });
+    
+    field
+        .getAttribute("value")
+        .then(function(text) {
+            var result = eval(text);
+            console.log(text + " = " + result);
+            field.clear();
+            field.sendKeys(result);
+        });
+
+    client
+	.findElement(webdriver.By.css("body"))
+	.click()
+	.then(function(){done();});
+}
+
+
 
 describe("Run Selenium tests", function() {
 
@@ -30,7 +71,7 @@ describe("Run Selenium tests", function() {
             .get(test_url);
 
         client
-            .findElement(webdriver.By.css("body"))
+            .findElement(webdriver.By.tagName("body"))
             .then(function(){done()});
     });
 
@@ -60,43 +101,21 @@ describe("Run Selenium tests", function() {
 
     describe('The game page', function() {
         it('should have a nice multiplication exercise for us to solve', function(done) {
-            // Solve a mult exercise
-
-            // Uuaagh: We cannot hold state well in this async-o-rama,
-            // so I copy the factors into the result field, eval() (!!)
-            // its content and send the result back to the field.
-
-            var field = client.findElement(webdriver.By.xpath("//input[@data-bind='value: result']"));
-            field.clear();
-            
-            client
-                .findElement(webdriver.By.xpath("//span[@data-bind='text: factor1']"))
-                .getText()
-                .then(function(text) {
-                    field.sendKeys(text + " * ");
-                    //console.log(text);
-                });
-            
-            client
-                .findElement(webdriver.By.xpath("//span[@data-bind='text: factor2']"))
-                .getText()
-                .then(function(text) {
-                    field.sendKeys(text);
-                    //console.log(text);
-                });
-            
-            field
-                .getAttribute("value")
-                .then(function(text) {
-                    var result = eval(text);
-                    console.log(text + " = " + result);
-                    field.clear();
-                    field.sendKeys(result);
-                    done();
-                });
+	    solveOneMulti(done);
         });
 
-        xit('should be kept open for a couple more seconds', function(done) {
+	it('should show a `Next exercise` when correct', function(done) {
+	    client
+		.findElement(webdriver.By.linkText("Next exercise"))
+		.click()
+		.then(function(){done();})
+	});
+
+        it('should have another multiplication exercise', function(done) {
+	    solveOneMulti(done);
+        });
+
+        it('should be kept open for a couple more seconds', function(done) {
             // For the world to see!
             client.sleep(5000).then(function(){done();});
         });
