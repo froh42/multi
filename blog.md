@@ -1,6 +1,23 @@
 # Multiplication prototype blog
 
-## Model / ViewModel
+## 2012-07-03 New test scripts
+
+Cleaned up test scripts:
+
+- servers (jsTestDriver, selenium) are only started when they are not yet running
+- removed duplication of shell scripts, much more readable
+- test server is compatible with IDEA, so we can just run the server from the shell & the tests from IDEA
+- re-running tests is FAAAAAST now (as server won't be restarted)
+- you can re-run unit tests only by running jsTestDriver/runtests.sh
+
+## 2012-07-03 Things to check out
+
+Einige interessante 
+
+* [Buster.js](http://busterjs.org/) New node & browser testing framework
+* [Browserstack](http://www.browserstack.com/) SAAS Browser testing, all platforms, all browsers 
+
+## 2012-07-03 Model / ViewModel
 
 * Model: Persistenter Speicher, welche Aufgabe wie oft ausgeführt wurde
 * Interface zum Model: Ermittle einen Aufgabensatz, Speichere Ergebnisse

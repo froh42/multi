@@ -20,27 +20,33 @@ module.exports = function (grunt) {
             files:["src/js/**/*.js", "grunt.js"],
             tasks:'default'
         },
-        lint: {
-            all: ['grunt.js', 'src/*.js', 'spec/*.js']
+        lint:{
+            all:['grunt.js', 'src/*.js', 'spec/*.js']
         },
-        jshint: {
-            options: {
-                browser: true
+        jshint:{
+            options:{
+                browser:true
+            }
+        },
+        shell:{
+            test:{
+                command:'jsTestDriver/runtests.sh',
+                stdout: true
             }
         }
     });
 
     // Default task.
     grunt.registerTask('default', 'lint');
-
+    grunt.loadNpmTasks('grunt-shell');
 };
 
 
 /*
 
-More stuff to possibly include:
+ More stuff to possibly include:
 
-http://coveraje.github.com/                     -- Javascript code coverage
-http://stackoverflow.com/a/5168482/60229        -- Link to client side JS package managers
+ http://coveraje.github.com/                     -- Javascript code coverage
+ http://stackoverflow.com/a/5168482/60229        -- Link to client side JS package managers
 
-*/
+ */
