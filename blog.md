@@ -1,5 +1,12 @@
 # Multiplication prototype blog
 
+## Model / ViewModel
+
+* Model: Persistenter Speicher, welche Aufgabe wie oft ausgeführt wurde
+* Interface zum Model: Ermittle einen Aufgabensatz, Speichere Ergebnisse
+* Unit-Tests für Model
+* ViewModel Unit-Tests mocken das Model
+
 ## 2012-07-02 Abgrenzung Selenium/Unit tests
 
 Hier nochmal explizit, weil ich gerde selbst nicht dran gedacht habe:
