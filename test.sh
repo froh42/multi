@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export PATH=$PATH:`pwd`/node_modules/.bin
+
 #
 # Handle error returns from called commands.
 #

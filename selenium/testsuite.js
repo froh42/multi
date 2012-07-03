@@ -53,7 +53,7 @@ describe("Run Selenium tests", function() {
 		.click()
 		.then(function(){
 		    assert.ok(
-			client.findElement(webdriver.By.linkText("Next exercise")).then(function(){done();}));
+			client.findElement(webdriver.By.xpath("//input[@data-bind='value: result']")).then(function(){done();}));
 		});
         });
     });
@@ -61,11 +61,11 @@ describe("Run Selenium tests", function() {
     describe('The game page', function() {
         it('should have a nice multiplication exercise for us to solve', function(done) {
             // Solve a mult exercise
-            
+
             // Uuaagh: We cannot hold state well in this async-o-rama,
             // so I copy the factors into the result field, eval() (!!)
             // its content and send the result back to the field.
-            
+
             var field = client.findElement(webdriver.By.xpath("//input[@data-bind='value: result']"));
             field.clear();
             
