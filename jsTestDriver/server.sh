@@ -8,38 +8,28 @@ COMMAND=$1
 command -v phantomjs >/dev/null 2>&1 || { echo "Can't find phantomjs, please make sure it's on your PATH." >&2; exit 1; }
 
 if [ ! -f "$ROOTDIR/JsTestDriver-$JSTD_VERSION.jar" ]; then
-    echo "Downloading JsTestDriver jar ..."
-    curl http://js-test-driver.googlecode.com/files/JsTestDriver-$JSTD_VERSION.jar > $ROOTDIR/JsTestDriver-$JSTD_VERSION.jar
+    curl -s http://js-test-driver.googlecode.com/files/JsTestDriver-$JSTD_VERSION.jar > $ROOTDIR/JsTestDriver-$JSTD_VERSION.jar
 fi
 
 if [ ! -f "$ROOTDIR/coverage-$JSTD_VERSION.jar" ]; then
-    echo "Downloading coverage jar ..."
-    curl http://js-test-driver.googlecode.com/files/coverage-$JSTD_VERSION.jar > $ROOTDIR/coverage-$JSTD_VERSION.jar
+    curl -s http://js-test-driver.googlecode.com/files/coverage-$JSTD_VERSION.jar > $ROOTDIR/coverage-$JSTD_VERSION.jar
 fi
 
 if [[ $COMMAND == "start" ]]; then
-    echo "Starting JSTD Server"
-
     nohup java -jar $ROOTDIR/JsTestDriver-$JSTD_VERSION.jar --port 9877 > $ROOTDIR/jstd.out 2> $ROOTDIR/jstd.err < /dev/null &
     echo $! > $ROOTDIR/jstd.pid
-
-    echo "Starting PhantomJS"
 
     nohup phantomjs phantomjs-jstd.js > $ROOTDIR/phantomjs.out 2> $ROOTDIR/phantomjs.err < /dev/null &
     echo $! > $ROOTDIR/phantomjs.pid
 fi
 
 if [[ $COMMAND == "stop" ]]; then
-    echo "Killing JSTD Server"
-
     if [ -f $ROOTDIR/jstd.pid ]; then
 	PID=`cat $ROOTDIR/jstd.pid`
 	kill $PID
     fi
 
     rm -f $ROOTDIR/jstd.out $ROOTDIR/jstd.err $ROOTDIR/jstd.pid
-
-    echo "Killing PhantomJS"
 
     if [ -f $ROOTDIR/phantomjs.pid ]; then
 	PID=`cat $ROOTDIR/phantomjs.pid`
