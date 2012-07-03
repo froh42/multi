@@ -1,5 +1,5 @@
 var page = require('webpage').create();
-var url = 'http://localhost:9877/capture';
+var url = 'http://localhost:9876/capture';
 var captureAttempts = 0;
 var captured = false;
 var locked = false;
