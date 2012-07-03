@@ -1,5 +1,6 @@
 /*global module:false*/
 module.exports = function (grunt) {
+    this.jsSources = ['grunt.js', 'src/*.js', 'spec/*.js'];
 
     // Project configuration.
     grunt.initConfig({
@@ -17,11 +18,11 @@ module.exports = function (grunt) {
                 ' */'
         },
         watch:{
-            files:["src/js/**/*.js", "grunt.js"],
+            files:this.jsSources,
             tasks:'default'
         },
         lint:{
-            all:['grunt.js', 'src/*.js', 'spec/*.js']
+            all:this.jsSources
         },
         jshint:{
             options:{
@@ -31,13 +32,13 @@ module.exports = function (grunt) {
         shell:{
             test:{
                 command:'jsTestDriver/runtests.sh',
-                stdout: true
+                stdout:true
             }
         }
     });
 
     // Default task.
-    grunt.registerTask('default', 'lint');
+    grunt.registerTask('default', 'lint shell:test');
     grunt.loadNpmTasks('grunt-shell');
 };
 

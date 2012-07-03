@@ -8,6 +8,7 @@ TestCase("viewmodelTest", {
         model.factor2(9);
         model.result(3 * 9);
         console.log("test");
+
         assertTrue(model.resultIsCorrect());
     },
     "test resultCorrect is false when result != factor1*factor2":function () {

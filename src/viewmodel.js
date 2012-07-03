@@ -27,16 +27,16 @@ function Multi(json) {
 
     this.stringify = function () {
         return JSON.stringify(this);
-    }
+    };
 }
 
 function MultiStorage() {
     this.get = function () {
         return new Multi(localStorage.getItem("multi"));
-    }
+    };
     this.save = function (multi) {
         localStorage.setItem("multi", multi);
-    }
+    };
 
 }
 

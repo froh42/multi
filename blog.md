@@ -1,14 +1,23 @@
 # Multiplication prototype blog
 
+## 2012-07-03 Grunt watch coolness
+
+Die neuen Testscripts laufen jetzt auch schön aus Grunt: Wenn der Server einmal gestartest ist und `grunt watch` einmal aufgerufen wurde, dann laufen bei jedem Test die jsTestDriver tests durch (gegen den Phantomjs, aber auch gergen einen Browser wenn man den attached)
+
+Jetzt müssten nur noch die Selenium Tests im phantomjs funktionieren, dann wäre das Testing perfekt. Aber die laufen ja auf travis … mehrstufige Testhierarchie.
+
 ## 2012-07-03 New test scripts
 
-Cleaned up test scripts:
+Testscript aufgeräumt:
 
 - servers (jsTestDriver, selenium) are only started when they are not yet running
 - removed duplication of shell scripts, much more readable
 - test server is compatible with IDEA, so we can just run the server from the shell & the tests from IDEA
 - re-running tests is FAAAAAST now (as server won't be restarted)
 - you can re-run unit tests only by running jsTestDriver/runtests.sh
+
+(Deutsch, dammit. Dieser Blog ist deutsch)
+
 
 ## 2012-07-03 Things to check out
 
