@@ -70,7 +70,7 @@ describe("Run Selenium tests", function() {
             field.clear();
             
             client
-                .findElement(webdriver.By.xpath("//span[@data-bind='text: factor1']"))
+                .findElement(webdriver.By.xpath("FAIL-FAIL-FAIL!!!!!!//span[@data-bind='text: factor1']"))
                 .getText()
                 .then(function(text) {
                     field.sendKeys(text + " * ");
