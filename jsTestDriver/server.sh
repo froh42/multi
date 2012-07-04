@@ -29,10 +29,7 @@ download http://js-test-driver.googlecode.com/files/coverage-$JSTD_VERSION.jar $
 #
 if [[ $COMMAND == "stop" ]] || [[ $COMMAND == "start" ]]; then
     stopbg jstd
-    rm -f $TMP/jstd.*
-
     stopbg phantomjs
-    rm -f $TMP/phantomjs.* 
 fi
 
 if [[ $COMMAND == "start" ]]; then
