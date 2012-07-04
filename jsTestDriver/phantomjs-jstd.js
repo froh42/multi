@@ -9,22 +9,6 @@ var log = function(str) {
     console.log(dt.toString() + ': ' + str);
 };
 
-
-page.onLoadStarted = function () {
-    console.log('Start loading...');
-};
-
-page.onLoadFinished = function (status) {
-    console.log('Loading finished.');
-};
-
-page.onError = function (msg, trace) {
-    console.log(msg);
-    trace.forEach(function(item) {
-	    console.log('  ', item.file, ':', item.line);
-	})
-}
-
 var pageLoaded = function(status) {
     log('Finished loading ' + url + ' with status: ' + status);
 

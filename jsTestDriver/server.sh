@@ -37,8 +37,5 @@ if [[ $COMMAND == "start" ]]; then
     waitfor checkJsTestDriver
 
     checkPhantom || startbg phantomjs phantomjs $ROOTDIR/phantomjs-jstd.js 
-    waitfor checkPhantom
-
-    tail tmp/*.err tmp/*.out
 fi
 
