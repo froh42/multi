@@ -58,8 +58,7 @@ Bei Dir nicht?
 
 === Es kostet Zeit und Geld!
 
-* Man muss sich Gedanken machen
-* Man muss wissen, was man erreichen will
+* Man muss sich Gedanken machen, wissen was man erreichen will
 * Man muss die Tests durchführen 
 
 == Tests durchführen
@@ -89,6 +88,19 @@ Meine Tochter als Inspiration: Ein 1x1 Trainer für Zweitklässler
 * Multi ist JavaScript im Browser ohne Server (wollte ich schon immer mal probieren)
 * Multi wird von Anfang an richtig getestet
 * Multi wird komplett gestestet! _(Wie die Großen? Nein, nicht so!)_
+
+=== Freizeitprojekt
+
+* https://github.com/froh42/multi/graphs/punch-card[Github Punch Card]
+
+== Einschub
+
+[quote, Sabine Egerer, Mo 2012-06-02 ]
+____
+Wenn Dein Votrag rum ist, sitzt Du abends aber nicht mehr so viel vor dem Computer, oder.
+____
+
+_Man beachte den Punkt anstelle eines Fragezeichens._
 
 == Beispiel: Multi
 
@@ -129,13 +141,12 @@ Eine Story ist genau dann fertig, wenn:
 
 === Ergebnis
 
-* Node/npm als Packamanager für Build-Tools
-* Grunt als Buildtools
+* Node/npm als Packamanager für Build-Tools, Grunt als Buildtools
 * Diverse Shellscripts um es flüssig zum Laufen zu kriegen
 
 Shellscripts können evtl. in grunt als Task implementiert werden -> *Anfängerproblem*
 
-== Aufgabe 2: Tests
+== Aufgabe 2: Tests (1/3)
 
 === Ausflug: Multi Architektur
 
@@ -154,10 +165,77 @@ Das ViewModel vermittelt also zwischen View und Model, hat aber einen eigenen Zu
 
 "Hinten dran" gibt es einen Systemtest, der alles im Zusammenspiel durch das UI prüft.
 
-* Florian!
+== Aufgabe 2: Tests (2/3)
+
+=== Exkurs: Multi Implementation
+
+* Demo, so sieht die Implementation aus
+
+=== Exkurs: Multi Unit Tests
+
+* Demo, so sehen die Unit Tests aus
+
+=== Testing in IDEA
+
+* jsTestDriver Server
+* Capture Browser(s)
+* Run Tests
+
+== Aufgabe 2: Tests (3/3)
+
+=== Shell based test runner
+
+* Startet Server
+* Phantomjs als Ausführungsumgebung
+* Man kann andere Browser hinzufügen, z.B. Firefox zum Debuggen!
+* Der Server läuft weiter
+
+== Belohnung
+
+=== Continous Testing
+
+* Der testrunner ist in 'grunt watch' eingebaut
+* DEMO
+* Tests in unter 100ms
+
+== Aufgabe 3: Continous Integration
+
+=== Kein eigener Server, sondern travis-ci
+
+* Zur Zeit nur für OpenSource
+* Tests laufen auf Linux
+* Perfekte Integration mit GitHub
+
+=== Travis-CI
+
+* Hauptarbeit: Scripts so schrieben, dass sie stabil laufen
 
 
-== Aufgabe 3: 
+== Abgleich Praxis und Theorie
+
+=== Multi Tests
+* Testarten: Unit Test, System Test 
+* Wer testet: Entwickler, automatisiertes System
+* Wann: Laufend (Unit Test), Laufend (automatisierter Systemtest)
+* Wo: Entwiclungsrechner, Testsystem (Travis-CI)
+* Es kostet Zeit und Geld: 
+** 95% Energie bisher im Umgebung, aber Hürde überwunden
+** Ggf. Aufwand um Tests zu schreiben
+
+== Ausblick
+=== Was fehlt
+* Manueller Abnahmetest vor Release
+* Test durch Dritte (Kind!)
+
+=== Noch mehr Fässer zum aufmachen:
+* Usability Testing
+* Code coverage
+* Automatische Testfälle
+
+=== Aber:
+Für ein kleines Projekt ein guter erster Schritt.
+
+=== Gentlemen, start your copiers.
 
 == Livedemo: Erweiterung für Addition
 
