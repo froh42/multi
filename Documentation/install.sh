@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo "examine install.sh and customize for your machine"
-exit 777
+#exit 777
 
 sudo port install py27-pygments
 sudo ln -sf /opt/local/bin/pygmentize-2.7 /opt/local/bin/pygmentize 

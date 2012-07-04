@@ -1,4 +1,4 @@
-Javascript end to end testing
+Javascript continous testing
 =============================
 :author: Frohwalt Egerer
 :email: <fe@et42.de>
@@ -12,21 +12,156 @@ Javascript end to end testing
 //:scrollable:
 //:linkcss:
 
-== Motivation
+== Warum?
 
-We want to:
+Ich hab da mal'n Programm geschrieben.
 
-.Optional Title
-[source,perl]
-----
-# *Source* block
-# Use: highlight code listings
-# (require `source-highlight` or `pygmentize`)
-use DBI;
-my $dbh = DBI->connect('...',$u,$p)
-    or die "connect: $dbh->errstr";
-----
+Bei mir geht es.
 
-== Slide Two
+Bei Dir nicht?
 
-That's all.
+=== Tests ...
+
+* prüfen Anforderungen
+* prüfen auf Fehler
+* prüfen Qualität
+* kosten Geld
+* kosten Zeit
+
+== Ein bisschen Theorie (1/2)
+
+=== Welche Tests gibt es?
+
+* Unit Tests 
+* Integration Tests
+* System Tests
+* System Integration Tests 
+
+* Acceptance Test 
+
+=== Wer testet?
+
+* Entwickler
+* Tester
+
+== Ein bisschen Theorie (2/2)
+=== Wann wird getestet?
+
+* Laufend?
+* Testphasen?
+
+=== Wo wird getestet?
+
+* Entwicklungsrechner
+* Testsystem
+* Live-System
+
+=== Es kostet Zeit und Geld!
+
+* Man muss sich Gedanken machen
+* Man muss wissen, was man erreichen will
+* Man muss die Tests durchführen 
+
+== Tests durchführen
+
+=== Manuelle Tests
+
+* Regelmäßige Arbeit
+* Bis zu einem Tester pro Entwickler
+* Iterationen? Schwer!
+
+=== Tests automatisch durchführen:
+
+* ... um Regressionen während der Entwicklung zu vermeiden
+* ... Design zu erzeugen
+* ... als Dokumentation
+* ... für mehr Spass beim Entwickeln
+
+Als extremste Form: TDD!
+
+== Beispiel: Multi
+
+Meine Tochter als Inspiration: Ein 1x1 Trainer für Zweitklässler
+
+=== Idee
+
+* Multi ist ein *_minimaler_* 1x1 Trainer, kann nur das allernotwendigste.
+* Multi ist JavaScript im Browser ohne Server (wollte ich schon immer mal probieren)
+* Multi wird von Anfang an richtig getestet
+* Multi wird komplett gestestet! _(Wie die Großen? Nein, nicht so!)_
+
+== Beispiel: Multi
+
+=== Der Entwicklungsprozeß
+
+* Anforderungen kommen ins Backlog
+* Eine Anforderung ist in Progress
+* Eine Anforderung ist erst done, wenn sie getestet wurde
+
+=== Multi's Definition of Done:
+
+Eine Story ist genau dann fertig, wenn:
+
+* Sie das erfüllt, was ich mir vorgestellt habe. (Im echten Leben: Sie erfüllt die vorher definierten Confirmations)
+* Es einen Test gibt, der die geforderten Dinge nachweist
+
+== Tools
+
+=== Folgende Sachen wollte ich verwenden:
+
+* less.js
+* Twitter Bootstrap
+* Ein beliebiges Unit-Testing-Framework, vorzugsweise Jasmine
+* ggf. Coffescript
+* jslint
+* Intellij Idea
+* knockout.js
+
+== Aufgabe 1: Build
+
+=== JavaScript build?
+
+* Less stylesheets kompilieren
+* Javascript minimieren
+* Coffescript übersetzen
+* Tests durchführen
+* Für Contious Integration vorbereiten
+
+=== Ergebnis
+
+* Node/npm als Packamanager für Build-Tools
+* Grunt als Buildtools
+* Diverse Shellscripts um es flüssig zum Laufen zu kriegen
+
+Shellscripts können evtl. in grunt als Task implementiert werden -> *Anfängerproblem*
+
+== Aufgabe 2: Tests
+
+=== Ausflug: Multi Architektur
+
+Multi verwendet MVVM:
+
+* Das UI heißt View
+* Der Zustand der Applikation steckt im Model
+* Der Zustand des UI (View) steckt im ViewModel, die Logik auch
+
+Das ViewModel vermittelt also zwischen View und Model, hat aber einen eigenen Zustand.
+
+=== Multi Testkonzept
+
+* Das Model wird über Unit Tests geprüft
+* Das ViewModel wird über Unit Tests geprüft
+
+"Hinten dran" gibt es einen Systemtest, der alles im Zusammenspiel durch das UI prüft.
+
+* Florian!
+
+
+== Aufgabe 3: 
+
+== Livedemo: Erweiterung für Addition
+
+Wenn noch Zeit ist ... let's do it. Bitte Vorschläge.
+
+
+Multi verwendet

@@ -1,2 +1,2 @@
 #!/bin/sh
-asciidoc -b deckjs *.asciidoc
+asciidoc -b deckjs multi.asciidoc
