@@ -1,5 +1,9 @@
 # Multiplication prototype blog
 
+## 2012-07-12 Cloud9 test
+
+Dieser Blogeintrag wurde mit [Cloud9](http://c9.io/froh42/multi) geschrieben
+
 ## 2012-07-03 Grunt watch coolness
 
 Die neuen Testscripts laufen jetzt auch schön aus Grunt: Wenn der Server einmal gestartest ist und `grunt watch` einmal aufgerufen wurde, dann laufen bei jedem Test die jsTestDriver tests durch (gegen den Phantomjs, aber auch gergen einen Browser wenn man den attached)
