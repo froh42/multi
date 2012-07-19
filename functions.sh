@@ -54,12 +54,13 @@ function startbg() {
     shift
     mkdir -p $TMP
     nohup $@ > $TMP/$id.out 2> $TMP/$id.err < /dev/null &
-    echo $! > $TMP/phantomjs.pid
+    echo $! > $TMP/$id.pid
 }
 
 function stopbg() {
+    id=$1
     if [ -f $TMP/$id.pid ]; then
-	PID=`cat $TMP/jstd.pid`
+	PID=`cat $TMP/$id.pid`
 	kill $PID >/dev/null
     fi
 }
