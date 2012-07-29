@@ -1,5 +1,11 @@
 # Multiplication prototype blog
 
+## 2012-07-30 Tests nicht zuverlässig
+
+Auf meinem alten Notebook hab' ich es ein paar mal gesehen, auf dem AirMac kann ich es
+stabil nachvollziehen: Die Tests starten nicht zuverlässig, das phantom-jstd.js script
+bleibt nach dem ersten Verbindungsversuch hängen. Siehe auch [phantomjs-node Issue 19](https://github.com/sgentle/phantomjs-node/issues/19)
+
 ## 2012-07-12 Cloud9 test
 
 Dieser Blogeintrag wurde mit [Cloud9](http://c9.io/froh42/multi) geschrieben
