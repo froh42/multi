@@ -1,10 +1,12 @@
 # Multiplication prototype blog
 
+## 2012-07-02 Tests nach buster.js portier
+
+Buster.js ist sowas wie das illegitime Kind von mocha und jsTestDriver. Offenbar funktioniert es phantomjs an den buster.js driver zu attachen. Anders als jsTestDriver ist buster selbst in Javascript geschrieben und läuft auf node.js. Ich hoffe, ich kann (vielleicht mit einer kleinen Browseremulationslibrary) ganz darauf verzichten die Unittests jedesmal im Browser laufen zu lassen und sie vielmehr direkt unter Node zu prüfen.
+
 ## 2012-07-30 Tests nicht zuverlässig
 
-Auf meinem alten Notebook hab' ich es ein paar mal gesehen, auf dem AirMac kann ich es
-stabil nachvollziehen: Die Tests starten nicht zuverlässig, das phantom-jstd.js script
-bleibt nach dem ersten Verbindungsversuch hängen. Siehe auch [phantomjs-node Issue 19](https://github.com/sgentle/phantomjs-node/issues/19)
+Auf meinem alten Notebook hab' ich es ein paar mal gesehen, auf dem AirMac kann ich es stabil nachvollziehen: Die Tests starten nicht zuverlässig, das phantom-jstd.js script bleibt nach dem ersten Verbindungsversuch hängen. Siehe auch [phantomjs-node Issue 19](https://github.com/sgentle/phantomjs-node/issues/19)
 
 ## 2012-07-12 Cloud9 test
 
