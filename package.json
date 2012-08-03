@@ -16,6 +16,7 @@
     "grunt-less" : "~0.1.5",
     "grunt-shell" : "~0.1.2",
     "mocha" : "1.2.x",
-    "selenium-webdriverjs" : "0.0.x"
+      "selenium-webdriverjs" : "0.0.x",
+      "buster" : "0.6.2"
   }
 }

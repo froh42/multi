@@ -5,7 +5,7 @@ multiMatchers = {
 };
 
 describe("Check the multi storage", function () {
-    var ms;
+    var ms=null;
     beforeEach(function () {
         ms = new MultiStorage();
     });
@@ -29,7 +29,7 @@ describe("Check the multi storage", function () {
 });
 
 describe("Test the multi main model", function () {
-    var multi;
+    var multi=null;
     beforeEach(function () {
         multi = new Multi(undefined);
         this.addMatchers(multiMatchers);
@@ -38,9 +38,9 @@ describe("Test the multi main model", function () {
     it("makeExercises returns a 10 by 10 array", function () {
         var ex;
         ex = multi.makeExercises();
-        expect(multi.makeExercises()).toHaveLength(10);
+        expect(ex).toHaveLength(10);
         for (var i = 0; i < 10; ++i) {
-            expect(multi.makeExercises()[i]).toHaveLength(10);
+            expect(ex[i]).toHaveLength(10);
         }
     });
 

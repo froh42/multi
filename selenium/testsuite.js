@@ -31,7 +31,7 @@ describe("Run Selenium tests", function() {
 
         client
             .findElement(webdriver.By.tagName("body"))
-            .then(function(){done()});
+            .then(function(){done();});
     });
 
     after(function(done) {
@@ -68,7 +68,7 @@ describe("Run Selenium tests", function() {
 	    client
 		.findElement(webdriver.By.linkText("Next exercise"))
 		.click()
-		.then(function(){done();})
+		.then(function(){done();});
 	});
 
         it('should have another multiplication exercise for us', function(done) {
@@ -125,4 +125,4 @@ var solveOneMulti = function(done){
 	.findElement(webdriver.By.css("body"))
 	.click()
 	.then(function(){done();});
-}
+};
