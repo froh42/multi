@@ -2,21 +2,22 @@
   "name": "multi",
   "version": "0.0.0",
 
-  "config" : {
-    "loglevel" : "error"
-  },
- 
-  "scripts" : { 
-    "install" : "grunt",
-    "test" : "./test.sh" 
+  "config": {
+    "loglevel": "error"
   },
 
-  "devDependencies" : { 
-    "grunt" : "~0.3.9",
-    "grunt-less" : "~0.1.5",
-    "grunt-shell" : "~0.1.2",
-    "mocha" : "1.2.x",
-      "selenium-webdriverjs" : "0.0.x",
-      "buster" : "0.6.2"
+  "scripts": {
+    "install": "grunt",
+    "test": "./test.sh"
+  },
+
+  "devDependencies": {
+    "grunt": "~0.3.9",
+    "grunt-less": "~0.1.5",
+    "grunt-shell": "~0.1.2",
+    "grunt-growl": "0.1.1",
+    "mocha": "1.2.x",
+    "selenium-webdriverjs": "0.0.x",
+    "buster": "0.6.2"
   }
 }

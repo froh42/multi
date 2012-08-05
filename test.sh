@@ -7,9 +7,7 @@ source functions.sh
 trap ErrorHandler ERR
 trap ExitHandler EXIT
 
-echo "****** jsTestDriver"
-jsTestDriver/server.sh start
-jsTestDriver/runtests.sh
+./test.js
 # Keep server running in the background, so IDE can also use it.
 
 (

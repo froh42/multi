@@ -1,6 +1,16 @@
 # Multiplication prototype blog
 
-## 2012-07-02 Tests nach buster.js portier
+## 2012-07-06 New tests up
+
+So, der Test-Runner für die Unittests ist auch wieder eingebunden in grunt, die Tests laufen bei mir wieder. Mal sehen was travis dazu sagt. Der Testserver und phantom laufen beim neuen Testsystem NICHT mehr weiter nach dem Ende des Tests, dafür ist das ganze Prozeßhandling einfacher & sauberer.
+
+## 2012-07-03 Goodbye, IDE
+
+Erst habe ich IDEA ausprobiert, dann habe ich Eclipse 4.x ausprobiert und letztendlich macht das alles nicht so wirklich Spass. All die netten Dinge, die man in der Java-Welt von einer IDE erwartet (Integrierter Build, Integriertes Debugging, Integrierte Unit tests) laufen eh nicht rund - damit ist die IDE nur noch ein schwerfälliger Editor.
+
+Jetzt arbeite ich mit Sublime Text 2 (weil der richtig gut ist und neben OSX auch noch auf Linux und Windows läuft und in Python erwetierbar ist) und habe wieder richtig Spass am programmieren. 
+
+## 2012-07-02 Tests nach buster.js portiert
 
 Buster.js ist sowas wie das illegitime Kind von mocha und jsTestDriver. Offenbar funktioniert es phantomjs an den buster.js driver zu attachen. Anders als jsTestDriver ist buster selbst in Javascript geschrieben und läuft auf node.js. Ich hoffe, ich kann (vielleicht mit einer kleinen Browseremulationslibrary) ganz darauf verzichten die Unittests jedesmal im Browser laufen zu lassen und sie vielmehr direkt unter Node zu prüfen.
 
