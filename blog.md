@@ -1,5 +1,15 @@
 # Multiplication prototype blog
 
+## 2012-07-16 Florians Mail: Nette Demo-App -- So sollte Multi aussehen :)
+
+Kuck mal! Voll schön gemacht:
+
+https://developer.mozilla.org/en-US/demosdetail/buzz-html5-audio-demo/launch
+
+Der Gewinner vom Audio Dev Derby:
+http://hacks.mozilla.org/2012/07/interview-jay-salvat-audio-dev-derby-winner/
+
+
 ## 2012-07-06 New tests up
 
 So, der Test-Runner für die Unittests ist auch wieder eingebunden in grunt, die Tests laufen bei mir wieder. Mal sehen was travis dazu sagt. Der Testserver und phantom laufen beim neuen Testsystem NICHT mehr weiter nach dem Ende des Tests, dafür ist das ganze Prozeßhandling einfacher & sauberer.
