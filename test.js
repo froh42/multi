@@ -11,12 +11,11 @@ function runTests() {
     console.log("Running buster server");
     server = run("buster-server", []);
     console.log("Running phantomjs");
-    phantom = run("phantomjs", ["testHelper/phantomjs-buster.js"]);
+    phantom = run("phantomjs", ["node_modules/buster/script/phantom.js"]);
     console.log("Running buster tests");
     phantom.stdout.on('data', function(data) {
-        if (data.toString().indexOf("status: success") != -1 && !started) {
+        if (data.toString().indexOf("success") != -1 && !started) {
             started = true;
-            console.log("*** Phantom captured, starting tests");
             buster = run("buster", ["test"]);
             buster.on('exit', function(code) {
                 server.kill('SIGINT');
