@@ -6,6 +6,9 @@
 
 ## In Progress
 * After 10 exercises the user gets a statistic how often he solved each possible exercise
+    * Progress exercise number when clicking on next exercise
+    * Terminate after 10 exercises
+    * Show statistics
 
 ## Done
 * Each time the user enters the game screen a new, random exercise is created.

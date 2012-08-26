@@ -1,0 +1,220 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"test",
+				"test_url"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 187.0,
+		"selected_items":
+		[
+			[
+				"termin",
+				"Preferences: Terminal Key Bindings – Default"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"markdo",
+				"Set Syntax: Markdown"
+			],
+			[
+				"mul",
+				"Set Syntax: MultiMarkdown"
+			],
+			[
+				"mark",
+				"Set Syntax: Markdown"
+			],
+			[
+				"",
+				"About"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 367.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/froh/dev/multi/package.json",
+		"/Users/froh/dev/multi/blog.md",
+		"/Users/froh/Desktop/sms.txt",
+		"/Users/froh/.profile",
+		"/Users/froh/web-backup/frohwalt.de/simo/index.html",
+		"/Users/froh/dev/multi/ztest.js",
+		"/Users/froh/dev/multi/spec/viewmodelTest.js",
+		"/Users/froh/dev/multi/spec/nodeTest.js",
+		"/Users/froh/dev/multi/spec/buster.js",
+		"/Users/froh/web-backup/index.html",
+		"/Users/froh/dev/multi/src/viewmodel.js",
+		"/Users/froh/Library/Application Support/Sublime Text 2/Packages/Terminal/Default (OSX).sublime-keymap",
+		"/Users/froh/dev/multi/functions.sh",
+		"/Users/froh/dev/multi/test.js",
+		"/Users/froh/dev/multi/test.sh",
+		"/Users/froh/dev/multi/grunt.js",
+		"/Users/froh/dev/multi/backlog.md",
+		"/Users/froh/dev/multi/spec/multiTest.js",
+		"/Users/froh/dev/multi/.git/COMMIT_EDITMSG",
+		"/Users/froh/dev/multi/node_modules/.bin/buster",
+		"/Users/froh/dev/multi/LICENSE",
+		"/Users/froh/dev/multi/node_modules/growl/package.json",
+		"/Users/froh/dev/multi/node_modules/buster/bin/buster",
+		"/Users/froh/Library/Application Support/Sublime Text 2/Packages/User/JSON.sublime-settings",
+		"/Users/froh/Library/Application Support/Sublime Text 2/Packages/User/JsFormat.sublime-settings",
+		"/Users/froh/Library/Application Support/Sublime Text 2/Packages/JsFormat/JsFormat.sublime-settings",
+		"/Users/froh/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/froh/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/froh/Library/Application Support/Sublime Text 2/Packages/JsFormat/Default (OSX).sublime-keymap"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"resudlt",
+			"mod",
+			"runCmd",
+			"argv",
+			"fs",
+			"toHave",
+			"addMatcher",
+			");\n",
+			"add",
+			"multiMatchers",
+			"multi",
+			"ms",
+			"Width",
+			"WIDTH",
+			"JasmineAdapter"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"blog",
+				"blog.md"
+			],
+			[
+				"funct",
+				"functions.sh"
+			],
+			[
+				"buster",
+				"node_modules/buster/bin/buster"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 225.0,
+	"status_bar_visible": true
+}

@@ -4,6 +4,8 @@ var fs = require("fs");
 var childProcess = require("child_process");
 var util = require("util");
 
+process.env.PATH = process.env.PATH+":"+__dirname+"/node_modules/.bin";
+
 function runTests() {
     var started = false;
     console.log("Running buster server");
@@ -41,6 +43,5 @@ function run(cmd, argv) {
 
     return run;
 }
-
 
 runTests()
