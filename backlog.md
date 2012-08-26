@@ -22,4 +22,11 @@
 
 * *The state (are we at the start view or within the game) is maintained by a view model instead of html.* This is a technical issue and totally transparent to the user. The user doesn't care and so should we. However, *if* there is a technical reason to maintain state the described way, we should integrate it in a refactoring.
 
+# Naming
+
+* Exercise - One single multiplication exercise
+* Quiz - A number of exercises (currently 10) asked in one session, one after another
+* Stats - Statistic data gathered running several quizzes
+
+
 
