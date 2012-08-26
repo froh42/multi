@@ -38,6 +38,7 @@ function Multi(json) {
     };
 }
 
+// Data storage for multi
 function MultiStorage() {
     this.load = function () {
         return JSON.parse(localStorage.getItem("multi"));
@@ -47,6 +48,7 @@ function MultiStorage() {
     };
 }
 
+// Model detailing a single exercise.
 function ExerciseModel(gameModel) {
     this.gameModel = gameModel;
     this.exerciseNumber = ko.observable(1);
