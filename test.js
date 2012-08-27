@@ -11,7 +11,7 @@ function runTests() {
     console.log("Running buster server");
     server = run("buster-server", []);
     console.log("Running phantomjs");
-    phantom = run("phantomjs", ["node_modules/buster/script/phantom.js"]);
+    phantom = run("phantomjs", ["phantomjs-buster.js"]);
     console.log("Running buster tests");
     phantom.stdout.on('data', function(data) {
         if (data.toString().indexOf("success") != -1 && !started) {
