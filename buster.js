@@ -22,16 +22,8 @@ config["amd tests"] = {
     environment: "browser",
     rootPath: "src",
     sources: ["testModule.js", "exerciseModel.js"],
-    tests: ["test/*test.js"],
-    libs: ["lib/require.js"],
+    tests: ["test/amd-test.js"],
+    libs: ["lib/*.js"],
     extensions: [require("buster-amd")]
 };
 
-//config["web-module"] = {
-//    environment: "browser",
-//    rootPath: "js",
-//    sources: ["testModule.js"],
-//    tests: ["test/*test.js"],
-//    libs: ["require-jquery.js"],
-//    extensions: [require("buster-amd")]
-//};

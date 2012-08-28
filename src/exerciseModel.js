@@ -1,3 +1,8 @@
+function getRandomInt(min, max) {
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
 define(["lib/knockout-2.1.0"], function(ko) {
 	return {
 		ExerciseModel: function(gameModel) {
@@ -10,6 +15,8 @@ define(["lib/knockout-2.1.0"], function(ko) {
 			this.resultIsCorrect = ko.computed(function() {
 				return parseInt(this.result(), 10) == parseInt(this.factor1(), 10) * parseInt(this.factor2(), 10);
 			}, this);
-		}
+
+		},
+
 	};
 });

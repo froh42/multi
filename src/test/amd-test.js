@@ -1,4 +1,4 @@
-define(["testModule"], function(mod) {
+define(["exerciseModel"], function(mod) {
 	buster.testCase("viewmodelTest", {
 		"test resultCorrect is true when result = factor1*factor2": function() {
 			var model = new mod.ExerciseModel();
