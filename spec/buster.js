@@ -9,4 +9,11 @@ config["My tests"] = {
     tests: ["spec/*Test.js"]
 };
 
+//config["amd tests"] = {
+//    rootPath: "../",
+//    sources: ["src/*.js"],
+//    tests: ["spec/testamd.js"],
+//    extensions: [require("buster-amd")]
+//};
+
 // Add more configuration groups as needed

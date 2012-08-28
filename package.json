@@ -18,6 +18,8 @@
     "grunt-growl": "0.1.1",
     "mocha": "1.2.x",
     "selenium-webdriverjs": "0.0.x",
-    "buster": "0.6.2"
+    "buster": "0.6.2",
+    "buster-amd": "0.2.0",
+    "node-static": "0.6.1"
   }
 }
