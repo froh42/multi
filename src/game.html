@@ -10,7 +10,8 @@
     <script src="lib/less-1.3.0.js"></script>
     <script src="lib/knockout-2.1.0.debug.js"></script>
     <script src="lib/knockout.mapping-latest.debug.js"></script>
-    <script src="viewmodel.js"></script>
+    <script data-main="game" src="lib/require.js"></script>
+
 
 
     <style>
@@ -62,8 +63,5 @@
     <p><a data-bind="visible: resultIsCorrect" href="game.html">Next exercise</a></p>
 </div>
 
-<script>
-    ko.applyBindings(new ExerciseModel());
-</script>
 </body>
 </html>
