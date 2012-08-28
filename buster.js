@@ -21,9 +21,9 @@ var config = module.exports;
 config["amd tests"] = {
     environment: "browser",
     rootPath: "src",
-    sources: ["testModule.js"],
+    sources: ["testModule.js", "exerciseModel.js"],
     tests: ["test/*test.js"],
-    libs: ["require-jquery.js"],
+    libs: ["lib/require.js"],
     extensions: [require("buster-amd")]
 };
 
