@@ -18,11 +18,20 @@ var config = module.exports;
 //};
 
 // Add more configuration groups as neededvar config = module.exports;
-config["web-module"] = {
+config["amd tests"] = {
     environment: "browser",
-    rootPath: "js",
+    rootPath: "src",
     sources: ["testModule.js"],
     tests: ["test/*test.js"],
     libs: ["require-jquery.js"],
     extensions: [require("buster-amd")]
 };
+
+//config["web-module"] = {
+//    environment: "browser",
+//    rootPath: "js",
+//    sources: ["testModule.js"],
+//    tests: ["test/*test.js"],
+//    libs: ["require-jquery.js"],
+//    extensions: [require("buster-amd")]
+//};
