@@ -15,4 +15,3 @@ config["amd tests"] = {
     libs: ["lib/*.js"],
     extensions: [require("buster-amd")]
 };
-
