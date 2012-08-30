@@ -7,9 +7,9 @@
 ## In Progress
 * After 10 exercises the user gets a statistic how often he solved each possible exercise
     * Progress exercise number when clicking on next exercise
-    	* Make javascript use require.js
-    		* Convert tests and relevant scripts to require.js
-    		* Convert page to require.js
+    	* (/) Make javascript use require.js
+    		* (/) Convert tests and relevant scripts to require.js
+    		* (/) Convert page to require.js
     * Terminate after 10 exercises
     * Show statistics
 

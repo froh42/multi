@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"get",
+				"getRandomInt"
+			],
+			[
 				"test",
 				"test_url"
 			]
@@ -15,9 +19,17 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 187.0,
+		"height": 392.0,
 		"selected_items":
 		[
+			[
+				"spae",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"form",
+				"Format: Javascript"
+			],
 			[
 				"termin",
 				"Preferences: Terminal Key Bindings – Default"
@@ -47,7 +59,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 449.0
+		"width": 467.0
 	},
 	"console":
 	{
@@ -64,23 +76,52 @@
 	},
 	"file_history":
 	[
+		"/Users/froh/dev/multi/buster.js",
+		"/Users/froh/dev/multi/src/testModule.js",
+		"/Users/froh/dev/multi/src/exerciseModel.js",
+		"/Users/froh/dev/multi/selenium/testsuite.js",
+		"/Users/froh/dev/multi/.git/config",
+		"/Users/froh/dev/multi/src/test/exerciseModelTest.js",
+		"/Users/froh/dev/multi/src/test/some-test.js",
+		"/Users/froh/dev/multi/src/test/amd-test.js",
+		"/Users/froh/dev/multi/src/viewmodel.js",
+		"/Users/froh/dev/multi/src/start.html",
+		"/Users/froh/dev/multi/src/game.html",
+		"/Users/froh/dev/multi/src/game.js",
+		"/Users/froh/dev/multi/spec/testamd.js",
+		"/Users/froh/dev/multi/spec/buster.js",
+		"/Users/froh/dev/github/buster-amd/demo/lab/buster.js",
+		"/Users/froh/dev/multi/phantomjs-buster.js",
+		"/Users/froh/dev/multi/backlog.md",
 		"/Users/froh/dev/multi/package.json",
-		"/Users/froh/dev/multi/blog.md",
-		"/Users/froh/Desktop/sms.txt",
 		"/Users/froh/.profile",
+		"/Users/froh/dev/multi/test.js",
+		"/Users/froh/dev/multi/src/main.js",
+		"/Users/froh/dev/multi/src/lib/knockout-2.1.0.debug.js",
+		"/Users/froh/dev/multi/node_modules/buster/node_modules/buster-test-cli/lib/runners/browser/progress-reporter.js",
+		"/Users/froh/dev/multi/src/js/require.js",
+		"/Users/froh/dev/multi/node_modules/buster-amd/lib/buster-amd.js",
+		"/Users/froh/dev/multi/node_modules/buster/script/phantom.js",
+		"/Users/froh/dev/github/buster-amd/lib/buster-amd.js",
+		"/Users/froh/dev/multi/src/lib/require.js",
+		"/Users/froh/dev/multi/grunt.js",
+		"/Users/froh/dev/multi/spec/foobarTest.js",
+		"/Users/froh/dev/multi/spec/viewmodelTest.js",
+		"/Users/froh/dev/multi/src/foobar.js",
+		"/Users/froh/dev/multi/src/lib/bootstrap/README.md",
+		"/Users/froh/dev/multi/src/dummy.js",
+		"/Users/froh/dev/multi/multi.sublime-project",
+		"/Users/froh/dev/multi/blog.md",
+		"/Users/froh/dev/multi/spec/multiMainTest.js",
+		"/Users/froh/dev/multi/spec/multiStorageTest.js",
+		"/Users/froh/Desktop/sms.txt",
 		"/Users/froh/web-backup/frohwalt.de/simo/index.html",
 		"/Users/froh/dev/multi/ztest.js",
-		"/Users/froh/dev/multi/spec/viewmodelTest.js",
 		"/Users/froh/dev/multi/spec/nodeTest.js",
-		"/Users/froh/dev/multi/spec/buster.js",
 		"/Users/froh/web-backup/index.html",
-		"/Users/froh/dev/multi/src/viewmodel.js",
 		"/Users/froh/Library/Application Support/Sublime Text 2/Packages/Terminal/Default (OSX).sublime-keymap",
 		"/Users/froh/dev/multi/functions.sh",
-		"/Users/froh/dev/multi/test.js",
 		"/Users/froh/dev/multi/test.sh",
-		"/Users/froh/dev/multi/grunt.js",
-		"/Users/froh/dev/multi/backlog.md",
 		"/Users/froh/dev/multi/spec/multiTest.js",
 		"/Users/froh/dev/multi/.git/COMMIT_EDITMSG",
 		"/Users/froh/dev/multi/node_modules/.bin/buster",
@@ -110,6 +151,35 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"function getRandomInt(min, max) {\n    return Math.floor(Math.random() * (max - min + 1)) + min;\n}\n\ndefine([\"lib/knockout-2.1.0\"], function(ko) {\n    return {\n        ExerciseModel: function(gameModel) {\n            this.gameModel = gameModel;\n            this.exerciseNumber = ko.observable(1);\n            this.exerciseCount = ko.observable(10);\n            this.factor1 = ko.observable(getRandomInt(2, 10));\n            this.factor2 = ko.observable(getRandomInt(2, 10));\n            this.result = ko.observable(\"\");\n            this.resultIsCorrect = ko.computed(function() {\n                return parseInt(this.result(), 10) == parseInt(this.factor1(), 10) * parseInt(this.factor2(), 10);\n            }, this);\n\n        },\n    };\n});",
+			"xxx",
+			"//",
+			"ExerciseModel",
+			"exerciseModel",
+			"ExerciseModel",
+			"exerciseModel",
+			"ExerciseModel",
+			"exerciseModel",
+			"ExerciseModel",
+			"exerciseModel",
+			"ExerciseModel",
+			"exerciseModel",
+			"ExerciseModel",
+			"exerciseModel",
+			"ExerciseModel",
+			"exerciseModel",
+			"ExerciseModel",
+			"exerciseModel",
+			"ExerciseModel",
+			"exerciseModel",
+			"ExerciseModel",
+			"exerciseModel",
+			"ExerciseModel",
+			"exerciseModel",
+			"ExerciseModel",
+			"exerciseModel",
+			"require",
+			"storage",
 			"resudlt",
 			"mod",
 			"runCmd",
@@ -189,6 +259,14 @@
 		"selected_items":
 		[
 			[
+				"exe",
+				"src/exerciseModel.js"
+			],
+			[
+				"testm",
+				"src/testModule.js"
+			],
+			[
 				"blog",
 				"blog.md"
 			],
@@ -215,6 +293,6 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 225.0,
+	"side_bar_width": 378.0,
 	"status_bar_visible": true
 }
