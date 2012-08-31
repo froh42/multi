@@ -4,26 +4,35 @@ define(["quizModel"], function(mod) {
 			this.quiz = new mod.Quiz(["a","b","c"]);
 		},
 		"exerciseCount is given number of exercises": function() {
-			assertEquals(3, this.quiz.exerciseCount());
+			expect(this.quiz.exerciseCount()).toBe(3);
+		},
+		"exerciseNumber is 0 initially": function() {
+			expect(this.quiz.exerciseNumber()).toBe(0);
+		},
+		"done is false initally": function() {
+			expect(this.quiz.done()).toBe(false);
+		},
+		"done is true after consuming all exercises": function() {
+			this.quiz.exerciseNumber(this.quiz.exerciseCount());
+			expect(this.quiz.done()).toBe(true);
+		},
+		"nextExercise advances exerciseNumber": function() {
+			this.quiz.nextExercise();
+			expect(this.quiz.exerciseNumber()).toBe(1);
+		},
+		"nextExercise nextExercise not advance beyond the last exercise": function() {
+			this.quiz.nextExercise();
+			this.quiz.nextExercise();
+			this.quiz.nextExercise();
+			expect(this.quiz.exerciseNumber()).toBe(2);
+		},
+		"current exercise returns each exercise when called after nextExercise": function() {
+			expect(this.quiz.currentExercise()).toBe("a");
+			this.quiz.nextExercise();
+			expect(this.quiz.currentExercise()).toBe("b");
+			this.quiz.nextExercise();
+			expect(this.quiz.currentExercise()).toBe("c");
 		}
-//		"exerciseNumber is 0 initially": function() {
-//			assert(true);
-//		},
-//		"done is false initally": function() {
-//			assert(true);
-//		},
-//		"nextExercise advances exerciseNumber": function() {
-//			assert(true);
-//		},
-//		"nextExercise does not advance beyond number of exercises": function() {
-//			assert(true);
-//		},
-//		"current exercise returns first exercise initally": function() {
-//			assert(true);
-//		},
-//		"current exercise returns each exercise when called after nextExercise": function() {
-//			assert(true);
-//		}
 
 	});
 });
