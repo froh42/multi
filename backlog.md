@@ -7,6 +7,7 @@
 ## In Progress
 * After 10 exercises the user gets a statistic how often he solved each possible exercise
     * Progress exercise number when clicking on next exercise
+    	* Handling of complete quiz and exercise are handled at distinct places.
     	* (/) Make javascript use require.js
     		* (/) Convert tests and relevant scripts to require.js
     		* (/) Convert page to require.js

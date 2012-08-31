@@ -1,21 +1,13 @@
 /*global module:false*/
 module.exports = function(grunt) {
-    this.jsSources = ['grunt.js', 'src/*.js', 'spec/*.js'];
+    this.jsSources = ['grunt.js', 'src/*.js', 'src/test/*.js'];
 
     // Project configuration.
     grunt.initConfig({
         meta: {
             title: 'Multi (Test1)',
             name: "Frohwalt Egerer",
-            homepage: 'http://et42.de',
-            banner: '/* \n' + //
-            ' * \tAuthor:\t\t{{meta.name}}\n' + //
-            ' * \tWebsite:\t{{meta.homepage}}\n' + //
-            ' * \n' + //
-            ' * \tTitle:\t\t{{meta.title}}\n' + //
-            ' * \tBuild:\t\t{{today "yyyyddmm"}}\n' + //
-            ' * \n' + //
-            ' */'
+            homepage: 'http://et42.de'
         },
         watch: {
             files: this.jsSources,

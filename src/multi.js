@@ -31,5 +31,5 @@ define(["lib/knockout-2.1.0"], function(ko) {
                 return second[f2];
             };
         }
-    }
+    };
 });
