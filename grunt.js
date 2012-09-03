@@ -1,6 +1,6 @@
 /*global module:false*/
 module.exports = function(grunt) {
-    this.jsSources = ['grunt.js', 'src/*.js', 'src/test/*.js'];
+    this.jsSources = ['grunt.js', 'src/*.js', 'src/test/*.js', 'src/ntest/*.js'];
 
     // Project configuration.
     grunt.initConfig({

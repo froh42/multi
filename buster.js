@@ -8,3 +8,10 @@ config["amd tests"] = {
     libs: ["lib/*.js"],
     extensions: [require("buster-amd")]
 };
+
+// config["node tests"] = {
+//     environment: "node",
+//     rootPath: "src",
+//     tests: ["ntest/*Test.js"]
+// };
+// 

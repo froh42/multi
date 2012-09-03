@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"ex",
+				"exerciseCount"
+			],
+			[
+				"exerc",
+				"exerciseCount"
+			],
+			[
+				"exe",
+				"exerciseNumber"
+			],
+			[
+				"exc",
+				"exerciseNumber"
+			],
+			[
+				"e",
+				"exerciseNumber"
+			],
+			[
 				"get",
 				"getRandomInt"
 			],
@@ -76,9 +96,17 @@
 	},
 	"file_history":
 	[
+		"/Users/froh/dev/multi/src/quizModel.js",
+		"/Users/froh/dev/multi/src/test/quizModelTest.js",
+		"/Users/froh/dev/multi/src/main.js",
+		"/Users/froh/dev/multi/src/game.js",
+		"/Users/froh/dev/multi/src/game.html",
+		"/Users/froh/dev/multi/src/exerciseModel.js",
+		"/Users/froh/dev/multi/backlog.md",
+		"/Users/froh/dev/multi/grunt.js",
+		"/Users/froh/dev/multi/src/multi.js",
 		"/Users/froh/dev/multi/buster.js",
 		"/Users/froh/dev/multi/src/testModule.js",
-		"/Users/froh/dev/multi/src/exerciseModel.js",
 		"/Users/froh/dev/multi/selenium/testsuite.js",
 		"/Users/froh/dev/multi/.git/config",
 		"/Users/froh/dev/multi/src/test/exerciseModelTest.js",
@@ -86,17 +114,13 @@
 		"/Users/froh/dev/multi/src/test/amd-test.js",
 		"/Users/froh/dev/multi/src/viewmodel.js",
 		"/Users/froh/dev/multi/src/start.html",
-		"/Users/froh/dev/multi/src/game.html",
-		"/Users/froh/dev/multi/src/game.js",
 		"/Users/froh/dev/multi/spec/testamd.js",
 		"/Users/froh/dev/multi/spec/buster.js",
 		"/Users/froh/dev/github/buster-amd/demo/lab/buster.js",
 		"/Users/froh/dev/multi/phantomjs-buster.js",
-		"/Users/froh/dev/multi/backlog.md",
 		"/Users/froh/dev/multi/package.json",
 		"/Users/froh/.profile",
 		"/Users/froh/dev/multi/test.js",
-		"/Users/froh/dev/multi/src/main.js",
 		"/Users/froh/dev/multi/src/lib/knockout-2.1.0.debug.js",
 		"/Users/froh/dev/multi/node_modules/buster/node_modules/buster-test-cli/lib/runners/browser/progress-reporter.js",
 		"/Users/froh/dev/multi/src/js/require.js",
@@ -104,7 +128,6 @@
 		"/Users/froh/dev/multi/node_modules/buster/script/phantom.js",
 		"/Users/froh/dev/github/buster-amd/lib/buster-amd.js",
 		"/Users/froh/dev/multi/src/lib/require.js",
-		"/Users/froh/dev/multi/grunt.js",
 		"/Users/froh/dev/multi/spec/foobarTest.js",
 		"/Users/froh/dev/multi/spec/viewmodelTest.js",
 		"/Users/froh/dev/multi/src/foobar.js",
@@ -259,6 +282,22 @@
 		"selected_items":
 		[
 			[
+				"game",
+				"src/game.html"
+			],
+			[
+				"game.j",
+				"src/game.js"
+			],
+			[
+				"main",
+				"src/main.js"
+			],
+			[
+				"quiz",
+				"src/quizModel.js"
+			],
+			[
 				"exe",
 				"src/exerciseModel.js"
 			],
@@ -293,6 +332,6 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 378.0,
+	"side_bar_width": 290.0,
 	"status_bar_visible": true
 }

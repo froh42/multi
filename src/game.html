@@ -50,15 +50,15 @@
     <h1>Aufgabe <span data-bind='text: exerciseNumber'>(num)</span> von <span
             data-bind='text: exerciseCount'>(total)</span></h1>
 
-    <p><span data-bind='text: factor1'>factor1</span> * <span data-bind='text: factor2'>factor2</span></p>
+    <p><span data-bind='text: currentExercise().factor1'>factor1</span> * <span data-bind='text: currentExercise().factor2'>factor2</span></p>
 
-    <p>Enter result: <input data-bind='value: result'/></p>
+    <p>Enter result: <input data-bind='value: currentExercise().result'/></p>
 
-    <p>Result: <span data-bind='text: result'/></span></p>
+    <p>Result: <span data-bind='text: currentExercise().result'/></span></p>
 
-    <p>The result is <span data-bind='text: resultIsCorrect'>(result)</span></p>
+    <p>The result is <span data-bind='text: currentExercise().resultIsCorrect'>(result)</span></p>
 
-    <p><a data-bind="visible: resultIsCorrect" href="game.html">Next exercise</a></p>
+    <p><a data-bind="visible: currentExercise().resultIsCorrect" href="game.html">Next exercise</a></p>
 </div>
 
 </body>
