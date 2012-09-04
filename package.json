@@ -1,15 +1,12 @@
 {
   "name": "multi",
   "version": "0.0.0",
-
   "config": {
     "loglevel": "error"
   },
-
   "scripts": {
-    "install": "grunt",
+    "install": "grunt"
   },
-
   "devDependencies": {
     "amd-loader": "latest",
     "buster": "latest",
@@ -22,6 +19,6 @@
     "mocha": "1.2.x",
     "node-static": "latest",
     "requirejs": "latest",
-    "selenium-webdriverjs": "0.0.x"
+    "zombie": "latest"
   }
 }
