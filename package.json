@@ -8,7 +8,6 @@
 
   "scripts": {
     "install": "grunt",
-    "test": "./test.sh"
   },
 
   "devDependencies": {
