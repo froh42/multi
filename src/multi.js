@@ -16,7 +16,6 @@ define(["lib/knockout-2.1.0"], function(ko) {
             if (json === null || json === undefined) {
                 this.exercises = this.makeExercises();
             } else {
-                console.log("Using existing object");
                 this.exercises = json.exercises;
             }
 

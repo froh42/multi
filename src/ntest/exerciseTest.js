@@ -9,7 +9,6 @@ var sys = require("sys");
 
 // Construct URL to local file.
 var test_url = "http://127.0.0.1:7335/game.html";
-console.log("test_url " + test_url);
 
 buster.testRunner.timeout = 1000;
 
@@ -40,12 +39,6 @@ buster.testCase("zombie test", {
     tearDown: function() {
         server.close();
     },
-    "google": function(done) {
-        browser.visit("http://www.google.de", function() {
-            expect(browser.window.document.title).toBe("Google");
-            done();
-        });
-    },
     "page loads": function(done) {
         browser.visit(test_url, function() {
             expect(browser.window.document.title).toBe("Multiplication trainer prototype");
@@ -55,9 +48,7 @@ buster.testCase("zombie test", {
     "entering a correct multiplication gives a correct result": function(done) {
         browser.visit(test_url, function() {
             var result = factor1() * factor2();
-            console.log("fac1 " + factor1() + " fac2 " + factor2() + " result " + result);
             fillResult(result);
-            console.log("result: " + resultIsCorrect());
             expect(resultIsCorrect()).toBe(true);
             done();
         });

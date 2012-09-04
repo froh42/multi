@@ -1,5 +1,13 @@
 # Multiplication prototype blog
 
+## 2012-09-04 Tests
+
+Die Tests laufen jetzt (deutlich schneller) über buster.js und zombie.js (Browsertests). An Buster ist schön, dass man sowohl Node- als auch Browsertests ausführen kann - die Zombie.js-Tests also nicht so ein Fremdkörper sind wie die Tests unter selenium.
+
+Was mir noch nicht so gut gefällt: Ich schaffe es zwar, die AMD-Module von Node aus zu laden, kriege aber unter Node die Datenmodelle nicht getestet, denn sie hängen von knockout.js ab und das wiederum vom Browser.
+
+Für einen Unit-Test würde mir aber ein "knockout-stub" reichen, vielleicht schaffe ich es ja noch den unterzuschieben. IOC mit requirejs wäre schon angenehm. Vielleicht geht das ja, man lernt ja nicht aus.
+
 ## 2012-07-16 Florians Mail: Nette Demo-App -- So sollte Multi aussehen :)
 
 Kuck mal! Voll schön gemacht:

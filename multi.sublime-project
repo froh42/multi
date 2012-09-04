@@ -1,8 +1,11 @@
 {
-	"folders":
-	[
-		{
-			"path": "/Users/froh/dev/multi"
-		}
-	]
+	"folders": [{
+		"path": "/Users/froh/dev/multi",
+		"folder_exclude_patterns": ["node_modules"],
+		"file_exclude_patterns": [".*"]
+	}],
+	"build_systems": [{
+		"name": "Grunt",
+		"cmd": ["grunt","--no-color"]
+	}]
 }

@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"e",
+				"exerciseModel"
+			],
+			[
+				"exerci",
+				"exerciseModel"
+			],
+			[
+				"to",
+				"toBe"
+			],
+			[
+				"ti",
+				"title"
+			],
+			[
 				"ex",
 				"exerciseCount"
 			],
@@ -17,10 +33,6 @@
 			],
 			[
 				"exc",
-				"exerciseNumber"
-			],
-			[
-				"e",
 				"exerciseNumber"
 			],
 			[
@@ -39,9 +51,13 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 147.0,
 		"selected_items":
 		[
+			[
+				"sort",
+				"Sort Lines"
+			],
 			[
 				"spae",
 				"Indentation: Convert to Spaces"
@@ -79,7 +95,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 467.0
+		"width": 449.0
 	},
 	"console":
 	{
@@ -96,18 +112,31 @@
 	},
 	"file_history":
 	[
-		"/Users/froh/dev/multi/src/quizModel.js",
-		"/Users/froh/dev/multi/src/test/quizModelTest.js",
-		"/Users/froh/dev/multi/src/main.js",
-		"/Users/froh/dev/multi/src/game.js",
+		"/Users/froh/dev/multi/multi.sublime-project",
+		"/Users/froh/dev/multi/src/ntest/exerciseModelTest.js",
+		"/Users/froh/dev/multi/dumpbust.js",
+		"/Users/froh/dev/multi/buster.js",
+		"/Users/froh/dev/multi/test.js",
+		"/Users/froh/dev/multi/grunt.js",
+		"/Users/froh/dev/multi/src/ntest/exerciseTest.js",
+		"/Users/froh/dev/multi/node_modules/grunt-shell/tasks/shell.js",
+		"/Users/froh/dev/multi/blog.md",
+		"/Users/froh/dev/multi/package.json",
 		"/Users/froh/dev/multi/src/game.html",
+		"/Users/froh/dev/multi/src/ntest/httpserver.js",
+		"/Users/froh/dev/multi/src/test/multiMainTest.js",
+		"/Users/froh/dev/multi/src/multi.js",
+		"/Users/froh/dev/multi/src/main.js",
+		"/Users/froh/dev/multi/node_modules/.bin/static",
+		"/Users/froh/dev/multi/ztest.js",
+		"/Users/froh/dev/multi/selenium/testsuite.js",
+		"/Users/froh/dev/multi/src/test/quizModelTest.js",
+		"/Users/froh/dev/multi/src/ntest/ztest.js",
+		"/Users/froh/dev/multi/src/quizModel.js",
+		"/Users/froh/dev/multi/src/game.js",
 		"/Users/froh/dev/multi/src/exerciseModel.js",
 		"/Users/froh/dev/multi/backlog.md",
-		"/Users/froh/dev/multi/grunt.js",
-		"/Users/froh/dev/multi/src/multi.js",
-		"/Users/froh/dev/multi/buster.js",
 		"/Users/froh/dev/multi/src/testModule.js",
-		"/Users/froh/dev/multi/selenium/testsuite.js",
 		"/Users/froh/dev/multi/.git/config",
 		"/Users/froh/dev/multi/src/test/exerciseModelTest.js",
 		"/Users/froh/dev/multi/src/test/some-test.js",
@@ -118,9 +147,7 @@
 		"/Users/froh/dev/multi/spec/buster.js",
 		"/Users/froh/dev/github/buster-amd/demo/lab/buster.js",
 		"/Users/froh/dev/multi/phantomjs-buster.js",
-		"/Users/froh/dev/multi/package.json",
 		"/Users/froh/.profile",
-		"/Users/froh/dev/multi/test.js",
 		"/Users/froh/dev/multi/src/lib/knockout-2.1.0.debug.js",
 		"/Users/froh/dev/multi/node_modules/buster/node_modules/buster-test-cli/lib/runners/browser/progress-reporter.js",
 		"/Users/froh/dev/multi/src/js/require.js",
@@ -133,13 +160,10 @@
 		"/Users/froh/dev/multi/src/foobar.js",
 		"/Users/froh/dev/multi/src/lib/bootstrap/README.md",
 		"/Users/froh/dev/multi/src/dummy.js",
-		"/Users/froh/dev/multi/multi.sublime-project",
-		"/Users/froh/dev/multi/blog.md",
 		"/Users/froh/dev/multi/spec/multiMainTest.js",
 		"/Users/froh/dev/multi/spec/multiStorageTest.js",
 		"/Users/froh/Desktop/sms.txt",
 		"/Users/froh/web-backup/frohwalt.de/simo/index.html",
-		"/Users/froh/dev/multi/ztest.js",
 		"/Users/froh/dev/multi/spec/nodeTest.js",
 		"/Users/froh/web-backup/index.html",
 		"/Users/froh/Library/Application Support/Sublime Text 2/Packages/Terminal/Default (OSX).sublime-keymap",
@@ -164,9 +188,15 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 93.0,
 		"where_history":
 		[
+			"",
+			"/Users/froh/dev/multi",
+			"/Users/froh/dev/multi/src",
+			"/Users/froh/dev/multi/src,-lib",
+			"/Users/froh/dev/multi/src",
+			""
 		]
 	},
 	"find_state":
@@ -174,6 +204,22 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"existsSync",
+			"is now called ",
+			"xistsSync is now called ",
+			"is now called",
+			"existsSync",
+			"started",
+			"zombie test",
+			"knockout.mapping-latest.debug",
+			"console.log",
+			"multi state can be json'ed and restored",
+			"can be",
+			"repl",
+			"this.",
+			"trainwreck",
+			"port",
+			"stat#",
 			"function getRandomInt(min, max) {\n    return Math.floor(Math.random() * (max - min + 1)) + min;\n}\n\ndefine([\"lib/knockout-2.1.0\"], function(ko) {\n    return {\n        ExerciseModel: function(gameModel) {\n            this.gameModel = gameModel;\n            this.exerciseNumber = ko.observable(1);\n            this.exerciseCount = ko.observable(10);\n            this.factor1 = ko.observable(getRandomInt(2, 10));\n            this.factor2 = ko.observable(getRandomInt(2, 10));\n            this.result = ko.observable(\"\");\n            this.resultIsCorrect = ko.computed(function() {\n                return parseInt(this.result(), 10) == parseInt(this.factor1(), 10) * parseInt(this.factor2(), 10);\n            }, this);\n\n        },\n    };\n});",
 			"xxx",
 			"//",
@@ -282,8 +328,36 @@
 		"selected_items":
 		[
 			[
+				"pa",
+				"package.json"
+			],
+			[
+				"pac",
+				"package.json"
+			],
+			[
+				"busjs",
+				"buster.js"
+			],
+			[
+				"buster.j",
+				"buster.js"
+			],
+			[
+				"e",
+				"src/ntest/exerciseTest.js"
+			],
+			[
+				"grunt",
+				"grunt.js"
+			],
+			[
 				"game",
 				"src/game.html"
+			],
+			[
+				"pack",
+				"package.json"
 			],
 			[
 				"game.j",

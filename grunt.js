@@ -1,4 +1,8 @@
-/*global module:false*/
+var fs = require("fs");
+var childProcess = require("child_process");
+var util = require("util");
+process.env.PATH = process.env.PATH + ":" + __dirname + "/node_modules/.bin";
+
 module.exports = function(grunt) {
     this.jsSources = ['grunt.js', 'src/*.js', 'src/test/*.js', 'src/ntest/*.js'];
 
@@ -30,17 +34,52 @@ module.exports = function(grunt) {
     });
 
     // Default task.
-    grunt.registerTask('default', 'lint shell:test');
+    grunt.registerTask('default', 'lint browserTest zombie');
     grunt.loadNpmTasks('grunt-shell');
     grunt.loadNpmTasks('grunt-growl');
+
+    grunt.registerTask('browserTest', "run browser tests", function runTests() {
+        var done = this.async();
+        var started = false;
+        server = runCmd("buster-server", []);
+        phantom = runCmd("phantomjs", ["phantomjs-buster.js"]);
+        phantom.stdout.on('data', function(data) {
+            if (data.toString().indexOf("success") != -1 && !started) {
+                started = true;
+                buster = runCmd("buster-test", ["-rdots", "-gamd"]);
+                buster.on('exit', function(code) {
+                    server.kill('SIGINT');
+                    phantom.kill('SIGINT');
+                    done();
+                });
+            }
+        });
+    });
+
+    grunt.registerTask('zombie', "run zombie tests", function runTests() {
+        var done = this.async();
+        buster = runCmd("buster-test", ["-rdots", "-gnode"]);
+        buster.on('exit', function(code) {
+            done();
+        });
+    });
 };
 
 
-/*
+function runCmd(cmd, argv) {
 
- More stuff to possibly include:
+    var run = childProcess.spawn(cmd, argv, {
+        env: process.env,
+        setsid: true
+    });
 
- http://coveraje.github.com/                     -- Javascript code coverage
- http://stackoverflow.com/a/5168482/60229        -- Link to client side JS package managers
+    run.stdout.on('data', function(data) {
+        process.stdout.write(data);
+    });
 
- */
+    run.stderr.on('data', function(data) {
+        process.stderr.write(data);
+    });
+
+    return run;
+}
