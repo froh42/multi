@@ -34,7 +34,7 @@ module.exports = function(grunt) {
     });
 
     // Default task.
-    grunt.registerTask('default', 'lint browserTest zombie');
+    grunt.registerTask('default', 'lint browserTest zombie selenium');
     grunt.loadNpmTasks('grunt-shell');
     grunt.loadNpmTasks('grunt-growl');
 
@@ -63,6 +63,15 @@ module.exports = function(grunt) {
             done();
         });
     });
+
+    grunt.registerTask('selenium', "run selenium tests", function runTests() {
+        var done = this.async();
+        sel = runCmd("./selenium/test.sh");
+        sel.on('exit', function(code) {
+            done();
+        });
+    });
+
 };
 
 
