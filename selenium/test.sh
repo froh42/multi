@@ -7,7 +7,6 @@ source functions.sh
 trap ErrorHandler ERR
 trap ExitHandler EXIT
 
-./test.js
 # Keep server running in the background, so IDE can also use it.
 
 (
