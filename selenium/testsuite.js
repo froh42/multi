@@ -53,7 +53,7 @@ describe("Run Selenium tests", function() {
 		.click()
 		.then(function(){
 		    assert.ok(
-			client.findElement(webdriver.By.xpath("//input[@data-bind='value: result']"))
+			client.findElement(webdriver.By.xpath("//input[@data-bind='value: currentExercise().result']"))
 			      .then(function(){done();}));
 		});
         });
@@ -93,11 +93,11 @@ var solveOneMulti = function(done){
     // so I copy the factors into the result field, eval() (!!)
     // its content and send the result back to the field.
 
-    var field = client.findElement(webdriver.By.xpath("//input[@data-bind='value: result']"));
+    var field = client.findElement(webdriver.By.xpath("//input[@data-bind='value: currentExercise().result']"));
     field.clear();
     
     client
-        .findElement(webdriver.By.xpath("//span[@data-bind='text: factor1']"))
+        .findElement(webdriver.By.xpath("//span[@data-bind='text: currentExercise().factor1']"))
         .getText()
         .then(function(text) {
             field.sendKeys(text + " * ");
@@ -105,7 +105,7 @@ var solveOneMulti = function(done){
         });
     
     client
-        .findElement(webdriver.By.xpath("//span[@data-bind='text: factor2']"))
+        .findElement(webdriver.By.xpath("//span[@data-bind='text: currentExercise().factor2']"))
         .getText()
         .then(function(text) {
             field.sendKeys(text);

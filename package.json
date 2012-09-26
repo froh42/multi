@@ -19,6 +19,7 @@
     "mocha": "1.2.x",
     "node-static": "latest",
     "requirejs": "latest",
-    "zombie": "latest"
+    "zombie": "latest",
+    "selenium-webdriverjs": "latest"
   }
 }
