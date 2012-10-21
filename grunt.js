@@ -33,8 +33,15 @@ module.exports = function(grunt) {
         }
     });
 
-    // Default task.
-    grunt.registerTask('default', 'lint browserTest zombie selenium');
+    // Default task to be run during development
+    grunt.registerTask('default', 'lint browserTest zombie');
+
+    // Tasks that are are to slow for interactive use
+    grunt.registerTask('molasses', 'selenium');
+
+    // Tasks run on npm install (travics-ci)
+    grunt.registerTask('npminstall', 'default molasses');
+
     grunt.loadNpmTasks('grunt-shell');
     grunt.loadNpmTasks('grunt-growl');
 
