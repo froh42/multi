@@ -36,7 +36,7 @@ module.exports = function(grunt) {
     // Default task to be run during development
     grunt.registerTask('default', 'lint browserTest zombie');
 
-    // Tasks that are are to slow for interactive use
+    // Tasks that are to slow for interactive use
     grunt.registerTask('molasses', 'selenium');
 
     // Tasks run on npm install (travics-ci)
