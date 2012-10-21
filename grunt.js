@@ -67,7 +67,8 @@ module.exports = function(grunt) {
         var done = this.async();
         buster = runCmd("buster-test", ["-rdots", "-gnode"]);
         buster.on('exit', function(code) {
-            done();
+            grunt.log.writeln("Zombie returned "+code);
+            done(code === 0);
         });
     });
 
@@ -75,7 +76,8 @@ module.exports = function(grunt) {
         var done = this.async();
         sel = runCmd("./selenium/test.sh");
         sel.on('exit', function(code) {
-            done();
+            grunt.log.writeln("Selenium returned "+code);
+            done(code === 0);
         });
     });
 

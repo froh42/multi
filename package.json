@@ -5,17 +5,17 @@
     "loglevel": "error"
   },
   "scripts": {
-    "install": "grunt"
+    "install": "grunt npminstall"
   },
   "devDependencies": {
     "amd-loader": "latest",
     "buster": "latest",
     "buster-amd": "latest",
     "buster-configuration": "latest",
-    "grunt": "~0.3.9",
-    "grunt-growl": "0.1.1",
-    "grunt-less": "~0.1.5",
-    "grunt-shell": "~0.1.2",
+    "grunt": "latest",
+    "grunt-growl": "latest",
+    "grunt-contrib-less": "latest",
+    "grunt-shell": "latest",
     "mocha": "1.2.x",
     "node-static": "latest",
     "requirejs": "latest",
