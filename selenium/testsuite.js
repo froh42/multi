@@ -75,7 +75,7 @@ describe("Run Selenium tests", function() {
             solveOneMulti(done);
         });
 
-        it('should be kept open for a couple more seconds', function(done) {
+        xit('should be kept open for a couple more seconds', function(done) {
             // For the world to see!
             client.sleep(5000).then(function(){done();});
         });
