@@ -1,6 +1,5 @@
 var buster = require("buster");
 var Browser = require("zombie");
-var repl = require("repl");
 var util = require("util");
 var path = require("path");
 var stat = require("node-static");
@@ -10,25 +9,25 @@ var sys = require("sys");
 // Construct URL to local file.
 var test_url = "http://127.0.0.1:7335/game.html";
 
-buster.testRunner.timeout = 1000;
+buster.testRunner.timeout = 10000000;
 
 var browser;
 var server;
 
 function factor1() {
-    return Number(browser.text("span[data-bind='text: currentExercise().factor1']"));
+    return Number(browser.text("#factor1"));
 }
 
 function factor2() {
-    return Number(browser.text("span[data-bind='text: currentExercise().factor2']"));
+    return Number(browser.text("#factor2"));
 }
 
 function fillResult(result) {
-    browser.fill("input", result);
+    browser.fill("#result", result);
 }
 
 function resultIsCorrect() {
-    return Boolean(browser.text("span[data-bind='text: currentExercise().resultIsCorrect']"));
+    return browser.text("#resultCorrect") === "true";
 }
 
 buster.testCase("zombie test", {
@@ -57,6 +56,7 @@ buster.testCase("zombie test", {
         browser.visit(test_url, function() {
             var result = factor1() * factor2();
             fillResult(result * 2);
+            browser.wait();
             expect(resultIsCorrect()).toBe(false);
             done();
         });
