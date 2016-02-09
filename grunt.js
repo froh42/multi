@@ -19,17 +19,6 @@ module.exports = function(grunt) {
         },
         lint: {
             all: this.jsSources
-        },
-        jshint: {
-            options: {
-                browser: true
-            }
-        },
-        shell: {
-            test: {
-                command: './test.js',
-                stdout: true
-            }
         }
     });
 

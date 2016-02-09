@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"result",
+				"resultIsCorrect"
+			],
+			[
 				"e",
 				"exerciseModel"
 			],
@@ -47,46 +51,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "multi.sublime-project",
-			"settings":
-			{
-				"buffer_size": 215,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "grunt.js",
-			"settings":
-			{
-				"buffer_size": 2313,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "package.json",
-			"settings":
-			{
-				"buffer_size": 484,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/froh/dev/java-apns/pom.xml",
-			"settings":
-			{
-				"buffer_size": 7086,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/froh/dev/java-apns/README.markdown",
-			"settings":
-			{
-				"buffer_size": 4070,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "Grunt",
 	"command_palette":
@@ -152,37 +116,47 @@
 	},
 	"file_history":
 	[
+		"/Users/froh/dev/multi/src/ntest/exerciseTest.js",
+		"/Users/froh/dev/multi/grunt.js",
+		"/Users/froh/dev/multi/src/game.html",
+		"/Users/froh/dev/multi/src/exerciseModel.js",
+		"/Users/froh/dev/multi/src/ntest/httpserver.js",
+		"/Users/froh/dev/multi/src/test/exerciseModelTest.js",
+		"/Users/froh/dev/multi/src/test/multiMainTest.js",
+		"/Users/froh/dev/multi/src/test/multiStorageTest.js",
+		"/Users/froh/dev/multi/src/test/quizModelTest.js",
+		"/Users/froh/dev/multi/junk/ntest/httpserver.js",
+		"/opt/local/etc/macports/macports.conf",
+		"/Users/froh/dev/multi/package.json",
+		"/private/tmp/foo/foo.sh",
+		"/Users/froh/dev/multi/src/start.html",
+		"/Users/froh/dev/multi/buster.js",
+		"/Users/froh/dev/multi/selenium/server.sh",
+		"/Users/froh/dev/multi/selenium/test",
+		"/Users/froh/dev/multi/src/quizModel.js",
+		"/Users/froh/dev/multi/src/game.js",
+		"/opt/local/etc/macports/variants.conf",
+		"/Users/froh/dev/java-apns/pom.xml",
 		"/Users/froh/dev/multi/multi.sublime-project",
+		"/Users/froh/.ssh/config",
+		"/Users/froh/dev/java-apns/README.markdown",
+		"/Users/froh/dev/multi/backlog.md",
 		"/Users/froh/dev/multi/src/ntest/exerciseModelTest.js",
 		"/Users/froh/dev/multi/dumpbust.js",
-		"/Users/froh/dev/multi/buster.js",
 		"/Users/froh/dev/multi/test.js",
-		"/Users/froh/dev/multi/grunt.js",
-		"/Users/froh/dev/multi/src/ntest/exerciseTest.js",
 		"/Users/froh/dev/multi/node_modules/grunt-shell/tasks/shell.js",
 		"/Users/froh/dev/multi/blog.md",
-		"/Users/froh/dev/multi/package.json",
-		"/Users/froh/dev/multi/src/game.html",
-		"/Users/froh/dev/multi/src/ntest/httpserver.js",
-		"/Users/froh/dev/multi/src/test/multiMainTest.js",
 		"/Users/froh/dev/multi/src/multi.js",
 		"/Users/froh/dev/multi/src/main.js",
 		"/Users/froh/dev/multi/node_modules/.bin/static",
 		"/Users/froh/dev/multi/ztest.js",
 		"/Users/froh/dev/multi/selenium/testsuite.js",
-		"/Users/froh/dev/multi/src/test/quizModelTest.js",
 		"/Users/froh/dev/multi/src/ntest/ztest.js",
-		"/Users/froh/dev/multi/src/quizModel.js",
-		"/Users/froh/dev/multi/src/game.js",
-		"/Users/froh/dev/multi/src/exerciseModel.js",
-		"/Users/froh/dev/multi/backlog.md",
 		"/Users/froh/dev/multi/src/testModule.js",
 		"/Users/froh/dev/multi/.git/config",
-		"/Users/froh/dev/multi/src/test/exerciseModelTest.js",
 		"/Users/froh/dev/multi/src/test/some-test.js",
 		"/Users/froh/dev/multi/src/test/amd-test.js",
 		"/Users/froh/dev/multi/src/viewmodel.js",
-		"/Users/froh/dev/multi/src/start.html",
 		"/Users/froh/dev/multi/spec/testamd.js",
 		"/Users/froh/dev/multi/spec/buster.js",
 		"/Users/froh/dev/github/buster-amd/demo/lab/buster.js",
@@ -244,6 +218,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"console",
+			"repö",
+			"repl",
+			"server",
 			"run",
 			"existsSync",
 			"is now called ",
@@ -322,147 +300,8 @@
 	"groups":
 	[
 		{
-			"selected": 4,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "multi.sublime-project",
-					"settings":
-					{
-						"buffer_size": 215,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								207,
-								207
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "grunt.js",
-					"settings":
-					{
-						"buffer_size": 2313,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1974,
-								1974
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 771.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "package.json",
-					"settings":
-					{
-						"buffer_size": 484,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								484,
-								484
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/Users/froh/dev/java-apns/pom.xml",
-					"settings":
-					{
-						"buffer_size": 7086,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/XML/XML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/Users/froh/dev/java-apns/README.markdown",
-					"settings":
-					{
-						"buffer_size": 4070,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								27,
-								30
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Markdown/Markdown.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -512,6 +351,10 @@
 		"selected_items":
 		[
 			[
+				"game",
+				"src/game.html"
+			],
+			[
 				"pa",
 				"package.json"
 			],
@@ -534,10 +377,6 @@
 			[
 				"grunt",
 				"grunt.js"
-			],
-			[
-				"game",
-				"src/game.html"
 			],
 			[
 				"pack",

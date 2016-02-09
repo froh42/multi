@@ -1,4 +1,4 @@
-// Simple module to server static files from a directory using node-static
+// Simple module to serve static files from a directory using node-static
 var http = require('http');
 var statik = require('node-static');
 
